@@ -1,0 +1,8 @@
+option java_outer_classname="DeleteDocumentsCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message DeleteDocumentsCommand 
+{	
+	repeated string documentIds = 1;
+}

@@ -1,0 +1,10 @@
+import "FailedDocument.proto";
+
+option java_outer_classname="DeleteDocumentsResponseProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message DeleteDocumentsResponse 
+{
+    repeated FailedDocument failedDocuments = 1;
+}

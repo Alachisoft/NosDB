@@ -1,0 +1,56 @@
+import "InsertDocumentsResponse.proto";
+import "DeleteDocumentsResponse.proto";
+import "GetDocumentsResponse.proto";
+import "UpdateResponse.proto";
+import "WriteQueryResponse.proto";
+import "ReadQueryResponse.proto";
+import "CreateSessionResponse.proto";
+import "GetChunkResponse.proto";
+import "ReplaceDocumentsResponse.proto";
+import "AuthenticationResponse.proto";
+import "InitDatabaseResponse.proto";
+
+option java_outer_classname="ResponseProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message Response
+{
+	optional Type type = 1;
+	optional int64 requestId = 2;
+	optional bool isSuccessful = 3;
+	optional int32 errorCode = 4;
+	repeated string errorParams = 5;
+	optional InsertDocumentsResponse insertDocumentsResponse = 6;
+	optional DeleteDocumentsResponse deleteDocumentsResponse = 7;
+	optional GetDocumentsResponse getDocumentsResponse = 8;
+	optional UpdateResponse updateResponse = 9;
+	optional WriteQueryResponse writeQueryResponse = 10;
+	optional ReadQueryResponse readQueryResponse = 11;
+	optional CreateSessionResponse CreateSessionResponse = 12;
+	optional GetChunkResponse getChunkResponse = 13;
+	optional ReplaceDocumentsResponse replaceDocumentsResponse = 14;
+	optional AuthenticationResponse authenticationResponse = 15;
+	optional InitDatabaseResponse initDatabaseResponse = 16;
+
+	enum Type
+	{
+		INSERT_DOCUMENTS = 1;
+		DELETE_DOCUMENTS = 2;
+        GET_DOCUMENTS = 3;
+		UPDATE = 4;
+        WRITE_QUERY = 5;
+        READ_QUERY = 6;
+		CREATE_COLLECTION = 7;
+		DROP_COLLECTION = 8;
+		CREATE_SESSION = 9;
+		DROP_SESSION = 10;
+		CREATE_INDEX = 11;
+		DROP_INDEX = 12;
+		GET_CHUNK = 13;
+		DISPOSE_READER = 14;
+		REPLACE_DOCUMENTS = 15;
+		AUTHENTICATION = 16;
+		INIT_DATABASE = 17;
+	}
+}

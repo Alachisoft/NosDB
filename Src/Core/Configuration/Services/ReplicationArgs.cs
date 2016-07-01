@@ -1,0 +1,85 @@
+﻿// /*
+// * Copyright (c) 2016, Alachisoft. All Rights Reserved.
+// *
+// * Licensed under the Apache License, Version 2.0 (the "License");
+// * you may not use this file except in compliance with the License.
+// * You may obtain a copy of the License at
+// *
+// * http://www.apache.org/licenses/LICENSE-2.0
+// *
+// * Unless required by applicable law or agreed to in writing, software
+// * distributed under the License is distributed on an "AS IS" BASIS,
+// * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// * See the License for the specific language governing permissions and
+// * limitations under the License.
+// */
+using Alachisoft.NosDB.Common.Configuration;
+using Alachisoft.NosDB.Common.Configuration.Services;
+using Alachisoft.NosDB.Common.Protobuf.ManagementCommands;
+using Alachisoft.NosDB.Common.Serialization;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Alachisoft.NosDB.Core.Configuration.Services
+{
+    public class ReplicationArgs : ICloneable, ICompactSerializable
+    {
+        public ReplicationType Type
+        {
+            set;
+            get;
+        }
+
+        public ClusterConfiguration Configuration
+        {
+            get;
+            set;
+        }
+
+        public ClusterInfo Metadata
+        {
+            get;
+            set;
+        }
+
+        public ManagementCommand Command
+        {
+            get;
+            set;
+        }
+
+
+        #region ICloneable Member
+        public object Clone()
+        {
+            ReplicationArgs replicationArgs = new ReplicationArgs();
+            replicationArgs.Type = Type;
+            replicationArgs.Configuration = Configuration;
+            replicationArgs.Metadata = Metadata;
+            replicationArgs.Command = Command;
+
+            return replicationArgs;
+        } 
+        #endregion
+
+        #region ICompactSerializable Members
+        public void Deserialize(Common.Serialization.IO.CompactReader reader)
+        {
+            Type = (ReplicationType)reader.ReadInt32();
+            Configuration = reader.ReadObject() as ClusterConfiguration;
+            Metadata = reader.ReadObject() as ClusterInfo;
+            Command = reader.ReadObject() as ManagementCommand;
+        }
+
+        public void Serialize(Common.Serialization.IO.CompactWriter writer)
+        {
+            writer.Write((int)Type);
+            writer.WriteObject(Configuration);
+            writer.WriteObject(Metadata);
+            writer.WriteObject(Command);
+        } 
+        #endregion
+    }
+}

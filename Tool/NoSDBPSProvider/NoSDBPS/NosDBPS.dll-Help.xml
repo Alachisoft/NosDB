@@ -1,0 +1,1996 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Export-Data</command:name>
+      <maml:description>
+        <maml:para>Exports data from a collection to a file.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Export</command:verb>
+      <command:noun>Data</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>The Export-Data cmdlet exports data from a collection to a file in JSON or CSV format. In case a query is specified, the result of the query is stored to a file.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Export-Data</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>Param</maml:name>
+          <maml:description>
+            <maml:para>Specifies parameters used in the specified query. The parameters are specified in the format ‘name1:value1, name2:value2’</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>Format</maml:name>
+          <maml:description>
+            <maml:para>Specifies format in which data is stored to the output file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>Specifies path of output file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>Query</maml:name>
+          <maml:description>
+            <maml:para>Specifies query to filter export data.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>Param</maml:name>
+        <maml:description>
+          <maml:para>Specifies parameters used in the specified query. The parameters are specified in the format ‘name1:value1, name2:value2’</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>Format</maml:name>
+        <maml:description>
+          <maml:para>Specifies format in which data is stored to the output file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>Specifies path of output file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>Query</maml:name>
+        <maml:description>
+          <maml:para>Specifies query to filter export data.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para>This command only works in the context of a collection in NosDB PSDrive. If used from any other context, an exception to change the context is thrown.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\databases\northwind\collections\product&gt; Export-Data -Path &quot;D:\Northwind Data&quot; -Format JSON</dev:code>
+        <dev:remarks>
+          <maml:para>This command exports the whole data from collection “product” of the “Northwind” database to a JSON file named “product” which is created on the specified path. </maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\databases\northwind\collections\product&gt; Export-Data -Path &quot;D:\Northwind Data&quot; -Format CSV -Query &apos;select * from product where productid &amp;gt; 25&apos;</dev:code>
+        <dev:remarks>
+          <maml:para>This command exports the data filtered by query from collection “product” of the “Northwind” database to a CSV file named “product” which is created on the specified path.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 3  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\databases\northwind\collections\product&gt; Export-Data -Path &apos;D:\Northwind Data&apos; -Format JSON -Query &apos;select * from product where productid &amp;gt; @startingPid&apos; -Param &apos;startingPid:25&apos;</dev:code>
+        <dev:remarks>
+          <maml:para>This command exports the data filtered by query from collection “product” of the “Northwind” database to a JSON file named “product” which is created on the specified path.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Import-Data</command:name>
+      <maml:description>
+        <maml:para>Imports data from a file to a collection.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Import</command:verb>
+      <command:noun>Data</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>
+        The Import-Data cmdlet imports data to a collection from a JSON or CSV format file.
+        To import data from the specified file, the whole data must be either in JSON or CSV format.
+      </maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Import-Data</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>Format</maml:name>
+          <maml:description>
+            <maml:para>Specifies data type of the file to be imported.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>UpdateMode</maml:name>
+          <maml:description>
+            <maml:para>Specifies if update data of the collection already contains data with the same unique key.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>Specifies path of the file from which data is to be imported.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>Format</maml:name>
+        <maml:description>
+          <maml:para>Specifies data type of the file to be imported.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>UpdateMode</maml:name>
+        <maml:description>
+          <maml:para>Specifies if update data of the collection already contains data with the same unique key.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>false</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>Specifies path of the file from which data is to be imported.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para>This command only works in the context of a collection in NosDB PSDrive. If used from any other context, an exception to change the context is thrown.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\databases\northwind\collections\product&gt; Import-Data -Format CSV -Path &apos;D:\Northwind Data\product.csv&apos;</dev:code>
+        <dev:remarks>
+          <maml:para>This command imports data from the specified path to the collection “product” of the “Northwind” database. </maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\databases\northwind\collections\product&gt; Import-Data -Format JSON -Path &apos;D:\Northwind Data\product.json&apos; -UpdateMode</dev:code>
+        <dev:remarks>
+          <maml:para>This command imports data from the specified path to the collection “product” of the “Northwind” database and updates entries if entries with same unique keys already exist.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <!--Generated by PS Cmdlet Help Editor-->
+    <command:details>
+      <command:name>Invoke-SQL</command:name>
+      <maml:description>
+        <maml:para> Invokes query on NosDB.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Invoke</command:verb>
+      <command:noun>SQL</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>The Invoke-SQL cmdlet is used to execute queries on NosDB.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-SQL</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>InputFile</maml:name>
+          <maml:description>
+            <maml:para>Specifies SQL file containing multiple queries.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>Query</maml:name>
+          <maml:description>
+            <maml:para>Specifies SQL file containing multiple DDL queries.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>InputFile</maml:name>
+        <maml:description>
+          <maml:para>Specifies SQL file containing multiple queries.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>Query</maml:name>
+        <maml:description>
+          <maml:para>Specifies SQL file containing multiple DDL queries.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para>This command works in any context in NosDB PSDrive. However in order to execute data manipulation queries, it works only from context of database.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\standalone\databases&gt; Invoke-SQL -Query &apos;CREATE DATABASE $NorthWind${}&apos;</dev:code>
+        <dev:remarks>
+          <maml:para> This command creates &quot;NorthWind&quot; database on connected server.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\standalone\databases&gt; Invoke-SQL -Query &apos;CREATE COLLECTION $Product$ {&quot;Database&quot;:&quot;NorthWind&quot;, &quot;CollectionType&quot;: &quot;NormalCollection&quot;, &quot;Distribution&quot;:{&quot;Strategy&quot;:&quot;HashBasedDistributionStrategy&quot;}}&apos;</dev:code>
+        <dev:remarks>
+          <maml:para>This command creates collection &quot;Product&quot; in &quot;NorthWind&quot; database with specified properties on connected server.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 3  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>
+          PS NosDB:\standalone\databases&gt; Invoke-SQL -InputFile D:\Script\NosQueries.txt
+        </dev:code>
+        <dev:remarks>
+          <maml:para>This command executes all queries in the specified file on the connected server.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 4  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\cluster1\databases\northwind&gt; Invoke-SQL -Query &apos;SELECT ProductID FROM Product WHERE ProductID &lt; 3&apos;</dev:code>
+        <dev:remarks>
+          <maml:para>This command Executes SELECT query on database &quot;northwind&quot;.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para/>
+
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-DatabaseCluster</command:name>
+      <maml:description>
+        <maml:para>Creates Database Cluster</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>New</command:verb>
+      <command:noun>DatabaseCluster</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>
+        The New-DatabaseCluster cmdlet creates a database cluster. However, a database cluster must contain a shard with at least one node.
+        To create a database cluster, all machines specified as shard nodes must have both services - database and configuration - running, and these machines must not be part of any other database cluster.
+      </maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-DatabaseCluster</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the database cluster to be Created.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>Shard</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the shard to be added to the database cluster.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+          <maml:name>Port</maml:name>
+          <maml:description>
+            <maml:para>Specifies the port for the shard, all nodes in the shards listen on the same port for database operations.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="4">
+          <maml:name>Server</maml:name>
+          <maml:description>
+            <maml:para>An array of the IP addresses and corresponding priorities of nodes to be part of the shard.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>HeartBeat</maml:name>
+          <maml:description>
+            <maml:para>Specifies heartbeat interval for the shard nodes in seconds.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the database cluster to be created.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>Shard</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the shard to be added to the database cluster.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+        <maml:name>Port</maml:name>
+        <maml:description>
+          <maml:para>Specifies the port for the shard, all nodes in the shards listen on the same port for database operations.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="4">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>An array of the IP addresses and corresponding priorities of nodes to be part of the shard.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>first address of the current machine, as resolved by DNS, with default priority 1</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>HeartBeat</maml:name>
+        <maml:description>
+          <maml:para>Specifies heartbeat interval for the shard nodes in seconds.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>5</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para />
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; New-DatabaseCluster -Name Pleiades -Shard myShard -Port 2101 -Server 192.168.0.15[3],192.168.2.14</dev:code>
+        <dev:remarks>
+          <maml:para>This command creates cluster named &quot;Pleiades&quot; with the specified shard, its corresponding port and listed nodes.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; New-DatabaseCluster -Name Pleiades -Shard myShard -Port 2101 </dev:code>
+        <dev:remarks>
+          <maml:para>This command creates cluster named &quot;Pleiades&quot; with the specified shard, its corresponding port and local machine as a node with first address resolved by DNS as node IP and default priority 1.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <!--Generated by PS Cmdlet Help Editor-->
+    <command:details>
+      <command:name>Test-Stress</command:name>
+      <maml:description>
+        <maml:para>Tests connected database for stress performance.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Test</command:verb>
+      <command:noun>Stress</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>The Test-Stress cmdlet can be used to put a stress on a database. This tool creates a test collection with the name &quot;nosdb_test_coll&quot; which performs Insert, Update, Delete and Fetch operations. While this tool is running, the activity can be monitored in Perfmon.</maml:para>
+      <maml:para>
+        To put more stress on the database, you can increase number of threads using switch &quot;-ThreadCount&quot; or run
+        multiple instances of this tool.
+      </maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Test-Stress</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>DropCollection</maml:name>
+          <maml:description>
+            <maml:para>Deletes the test collection from database.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>ThreadCount</maml:name>
+          <maml:description>
+            <maml:para>Specifies number of client threads.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>TestCaseIterations</maml:name>
+          <maml:description>
+            <maml:para>Specifies Number of iterations in a test case.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>ReportingInterval</maml:name>
+          <maml:description>
+            <maml:para>Specifies reporting interval in terms of test case iterations.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>TestCaseIterationDelay</maml:name>
+          <maml:description>
+            <maml:para>Specifies delay between each test case iteration.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>GetsPerIteration</maml:name>
+          <maml:description>
+            <maml:para> Specifies number of Gets in one iteration of test case.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>UpdatesPerIteration</maml:name>
+          <maml:description>
+            <maml:para>Specifies number of Updates in one iteration of test case.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>InsertsPerIteration</maml:name>
+          <maml:description>
+            <maml:para>Specifies number of Inserts in one iteration of test case.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>DeletesPerIteration</maml:name>
+          <maml:description>
+            <maml:para>Specifies number of Deletes in one iteration of test case.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>TotalIteration</maml:name>
+          <maml:description>
+            <maml:para>Specifies number of times test case is to be executed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+          <maml:name>MaxDocuments</maml:name>
+          <maml:description>
+            <maml:para>Specifies maximum number of documents to perform test.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>DropCollection</maml:name>
+        <maml:description>
+          <maml:para>Deletes the test collection from database.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>false</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>ThreadCount</maml:name>
+        <maml:description>
+          <maml:para>Specifies number of client threads.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>1</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>TestCaseIterations</maml:name>
+        <maml:description>
+          <maml:para>Specifies Number of iterations in a test case.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>20</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>ReportingInterval</maml:name>
+        <maml:description>
+          <maml:para>Specifies reporting interval in terms of test case iterations.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>500</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>TestCaseIterationDelay</maml:name>
+        <maml:description>
+          <maml:para>Specifies delay between each test case iteration.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>0</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>GetsPerIteration</maml:name>
+        <maml:description>
+          <maml:para> Specifies number of Gets in one iteration of test case.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>25</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>UpdatesPerIteration</maml:name>
+        <maml:description>
+          <maml:para>Specifies number of Updates in one iteration of test case.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>5</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>InsertsPerIteration</maml:name>
+        <maml:description>
+          <maml:para>Specifies number of Inserts in one iteration of test case.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>10</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>DeletesPerIteration</maml:name>
+        <maml:description>
+          <maml:para>Specifies number of Deletes in one iteration of test case.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>1</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>TotalIteration</maml:name>
+        <maml:description>
+          <maml:para>Specifies number of times test case is to be executed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>infinite</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+        <maml:name>MaxDocuments</maml:name>
+        <maml:description>
+          <maml:para>Specifies maximum number of documents to perform test.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>10000</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para>
+          This command works in the context “database”. If used from any other context, an exception to change the context is thrown.
+          Also note that the collection created by this tool is not automatically removed. To drop this collection, you can run this tool with switch &quot;-DropCollection&quot;
+        </maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\cluster\databases\database1&gt; Test-Stress -ThreadCount 3 -ReportingInterval 5</dev:code>
+        <dev:remarks>
+          <maml:para>This command performs stress test on &quot;database1&quot; with 3 client threads and reports status after 5 iterations. with default test configuration.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\cluster\databases\database1&gt; Test-Stress</dev:code>
+        <dev:remarks>
+          <maml:para>This command performs stress test on &quot;database1&quot; with 1 client thread and default configuration.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 3  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\cluster\databases\database1&gt; Test-Stress -ThreadCount 2 -TestCaseIterations 2 -TestCaseIterationDelay 1 -GetsPerIteration 10 -UpdatesPerIteration 10 -DeletesPerIteration 10 -InsertsPerIteration 10 -ReportingInterval 5 -TotalIteration 2</dev:code>
+        <dev:remarks>
+          <maml:para>This command performs stress test on &quot;database1&quot; with 2 client threads, with 2 iterations in a test case, delay of 1 sec after each iteration, with 10 Gets, 10 Updates, 10 Deletes and 10 Inserts in an iteration.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Move-Collection</command:name>
+      <maml:description>
+        <maml:para>Moves a single sharded or capped collection from one shard to another.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Move</command:verb>
+      <command:noun>Collection</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>The Move-Collection cmdlet is used to move single sharded or capped collections from current shard to specified shard, as they store data on a single shard only. </maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Move-Collection</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>NewShard</maml:name>
+          <maml:description>
+            <maml:para>Specifies name of shard on which the collection is to be moved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>NewShard</maml:name>
+        <maml:description>
+          <maml:para>Specifies name of shard on which the collection is to be moved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para>This command only works in the context of a single sharded or capped collection in NosDB PSDrive. If used from any other context, an exception to change the context is thrown.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\databases\northwind\collections\jsondocument&gt; Move-Collection myShard</dev:code>
+        <dev:remarks>
+          <maml:para>This command moves the single sharded collection “jsondocument” of the “northwind” database to the shard named “myShard”.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Add-Shard</command:name>
+      <maml:description>
+        <maml:para>Adds Shard with one or more nodes in database cluster.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Add</command:verb>
+      <command:noun>Shard</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>
+        The Add-Shard cmdlet adds a shard to the database cluster. A shard can contain multiple nodes but must have at least one node in order to be a part of the database cluster.
+        To add a certain shard to the database cluster, at least one machine is required as node. Note that all machines specified as nodes must have the NosDB database service running, and these machines cannot be part of any other database cluster. However, they may already be part of some other shard in the same database cluster.
+      </maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-Shard</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the shard to be added to the database cluster.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>Port</maml:name>
+          <maml:description>
+            <maml:para>Specifies the port for the shard, all nodes in the shards listen on the same port for database operations.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+          <maml:name>Server</maml:name>
+          <maml:description>
+            <maml:para>An array of the IP addresses and corresponding priorities of nodes to be part of the shard.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>HeartBeat</maml:name>
+          <maml:description>
+            <maml:para>Specifies heartbeat interval for the shard nodes in seconds.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the shard to be added to the database cluster.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>Port</maml:name>
+        <maml:description>
+          <maml:para>Specifies the port for the shard, all nodes in the shards listen on the same port for database operations.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>An array of the IP addresses and corresponding priorities of nodes to be part of the shard.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>first address of the current machine, as resolved by DNS, with default priority 1 as a node.</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>HeartBeat</maml:name>
+        <maml:description>
+          <maml:para>Specifies heartbeat interval for the shard nodes in seconds.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>5</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para>This command only works in context of “shards” in NosDB PSDrive. If used from any other context, an exception to change the context is thrown.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards&gt; Add-Shard -Name myShard -Port 2101 -Server 192.168.0.15[3],192.168.2.14 -HeartBeat 8</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds a shard named “myShard” with specified port 2101 and specified heartbeat interval 8 seconds in the database cluster, where “myShard” contains two machines with addresses 192.168.0.15, 192.168.2.14 and priorities 3, 1 respectively.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards&gt; Add-Shard -Name myShard -Port 2101 -Server 192.168.0.15[3],192.168.2.14</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds a shard named “myShard” with specified port 2101 and default heartbeat interval i.e. 5 seconds in the database cluster, where “myShard” contains two nodes with addresses 192.168.0.15, 192.168.2.14 and priorities 3, 1 respectively.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 3  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards&gt; Add-Shard -Name myShard -Port 2101</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds a shard named “myShard” with specified port 2101 and default heartbeat interval i.e. 5 seconds in database cluster, where “myShard” contains the current machine as node with first address resolved by DNS and default priority 1.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Connect-DatabaseCluster</command:name>
+      <maml:description>
+        <maml:para>Connects to the database cluster.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Connect</command:verb>
+      <command:noun>DatabaseCluster</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>The Connect-DatabaseCluster cmdlet lets the user connect to any active database cluster. After connecting to the database cluster, the user can to traverse within the hierarchy of NosDB database cluster and execute all commands available in the nosdbps provider.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Connect-DatabaseCluster</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>Server</maml:name>
+          <maml:description>
+            <maml:para>Specifies address of the NosDB cluster configuration node.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+          <maml:name>Port</maml:name>
+          <maml:description>
+            <maml:para>Specifies the port of NosDB configuration service for the database cluster.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>StandAlone</maml:name>
+          <maml:description>
+            <maml:para>Specifies if the database is standalone.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>Specifies address of the NosDB cluster configuration node.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>first address of current machine as resolved by DNS as a node</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+        <maml:name>Port</maml:name>
+        <maml:description>
+          <maml:para>Specifies the port of NosDB configuration service for the database cluster.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>9950</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>StandAlone</maml:name>
+        <maml:description>
+          <maml:para>Specifies if the database is standalone.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>false</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para />
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS C:\Users&gt; Connect-DatabaseCluster</dev:code>
+        <dev:remarks>
+          <maml:para>Connects to the database cluster configuration service running on the current machine’s first address as resolved by DNS and default port 9950.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>
+          PS C:\Users&gt; Connect-DatabaseCluster -Server 192.168.1.187 -Port 2147
+
+          PS C:\Users&gt; Connect-DatabaseCluster 192.168.1.187 2147
+        </dev:code>
+        <dev:remarks>
+          <maml:para>Connects to the database cluster configuration service running on address 192.168.1.187 and port 2147.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 3  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS C:\Users&gt; Connect-DatabaseCluster -Server 192.168.1.187 -Port 2147 -StandAlone</dev:code>
+        <dev:remarks>
+          <maml:para>Connects to the standalone database configuration service running on address 192.168.1.187 and port 2147.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-Shard</command:name>
+      <maml:description>
+        <maml:para>Removes shard from the database cluster.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Remove</command:verb>
+      <command:noun>Shard</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>The Remove-Shard cmdlet is used to remove a shard from the database cluster.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-Shard</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>Quiet</maml:name>
+          <maml:description>
+            <maml:para>Specifies if Remove-Shard is in quiet mode.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies name of shard to be removed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+          <maml:name>Forced</maml:name>
+          <maml:description>
+            <maml:para>Specifies if shard removal is forced. In case of forced removal, all data on the shard is removed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>Quiet</maml:name>
+        <maml:description>
+          <maml:para>Specifies if Remove-Shard is in quiet mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies name of shard to be removed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="named">
+        <maml:name>Forced</maml:name>
+        <maml:description>
+          <maml:para>Specifies if shard removal is forced. In case of forced removal, all data on the shard is removed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>false</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para>This command works in the context “shards” in NosDB PSDrive. If used from any other context, an exception to change the context is thrown.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards&gt; Remove-Shard myShard -Quiet -Forced</dev:code>
+        <dev:remarks>
+          <maml:para>This command removes “myShard” from the database cluster without prompting confirmation and removes data from the shard as well.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards&gt; Remove-Shard myShard -Quiet</dev:code>
+        <dev:remarks>
+          <maml:para>This command removes “myShard” from the database cluster without prompting confirmation. However, state transfer takes place before removal of the shard.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 3  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards&gt; Remove-Shard myShard -Forced</dev:code>
+        <dev:remarks>
+          <maml:para>This command removes “myShard” from the database cluster after prompting confirmation. However data from the shard is lost as removal is forceful.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 4  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards&gt; Remove-Shard myShard </dev:code>
+        <dev:remarks>
+          <maml:para>This command removes “myShard” from the database cluster after prompting confirmation. However, state transfer takes place before removal of the shard.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Start-Shard</command:name>
+      <maml:description>
+        <maml:para>Starts a shard in the database cluster.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Start</command:verb>
+      <command:noun>Shard</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>
+        The Start-Shard cmdlet is used to start shard of the database cluster.
+        This command attempts to start all nodes in the shard. Hence, if any of the nodes is started, the shard is considered started.
+      </maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Start-Shard</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies name of the shard to be started.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies name of the shard to be started.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para>This command works in the context “shards” or in a specified shard in NosDB PSDrive. If used from any other context, an exception to change the context is thrown.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards&gt; Start-Shard -Name shard1</dev:code>
+        <dev:remarks>
+          <maml:para>This command starts the specified shard from the database cluster. </maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards\shard1&gt; Start-Shard</dev:code>
+        <dev:remarks>
+          <maml:para>This command starts the shard in the context.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Stop-Shard</command:name>
+      <maml:description>
+        <maml:para>Stops a shard in the database cluster.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para />
+      </maml:copyright>
+      <command:verb>Stop</command:verb>
+      <command:noun>Shard</command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para>The Stop-Shard cmdlet is used to stop all nodes in the shard of the database cluster.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Stop-Shard</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies name of the shard to be stopped.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies name of the shard to be stopped.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri></maml:uri>
+          <maml:description/>
+        </dev:type>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para>This command works in the context “shards” or in a specified shard in NosDB PSDrive. If used from any other context, an exception to change the context is thrown.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------------------  Example 1  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards\shard1&gt; Stop-Shard</dev:code>
+        <dev:remarks>
+          <maml:para>This command stops the specified shard from the database cluster. </maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------  Example 2  --------------------------</maml:title>
+        <maml:introduction>
+          <maml:paragraph>PS C:\&gt;</maml:paragraph>
+        </maml:introduction>
+        <dev:code>PS NosDB:\databasecluster\shards&gt; Stop-Shard -Name shard1</dev:code>
+        <dev:remarks>
+          <maml:para>This command stops the shard in the specified context.</maml:para>
+          <maml:para />
+          <maml:para />
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>
+              <maml:para />
+            </command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+
+
+</helpItems>

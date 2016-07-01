@@ -1,0 +1,17 @@
+import "LMDBConfig.proto";
+import "ESENTConfig.proto";
+
+option java_outer_classname="StorageProviderConfigProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message StorageProviderConfig 
+{	
+	optional int64  maxDatabaseSize = 1;
+	optional string providerTypeString = 2;
+	optional bool isMultiFileStore = 3;
+	optional LMDBConfig lMDBProvider = 4;
+	optional ESENTConfig eSENTProvider = 5;
+	
+		
+}

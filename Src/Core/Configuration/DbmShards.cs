@@ -1,0 +1,84 @@
+﻿// /*
+// * Copyright (c) 2016, Alachisoft. All Rights Reserved.
+// *
+// * Licensed under the Apache License, Version 2.0 (the "License");
+// * you may not use this file except in compliance with the License.
+// * You may obtain a copy of the License at
+// *
+// * http://www.apache.org/licenses/LICENSE-2.0
+// *
+// * Unless required by applicable law or agreed to in writing, software
+// * distributed under the License is distributed on an "AS IS" BASIS,
+// * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// * See the License for the specific language governing permissions and
+// * limitations under the License.
+// */
+using Alachisoft.NosDB.Common.Configuration;
+using Alachisoft.NosDB.Common.Enum;
+using Alachisoft.NosDB.Common.Serialization;
+using Alachisoft.NosDB.Core.Configuration.Services;
+using Alachisoft.NosDB.Core.Toplogies.Impl;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Alachisoft.NosDB.Core.Configuration
+{
+    
+    public class DbmShards : ICloneable, ICompactSerializable
+    {
+        List<DbmShard> shardList = new List<DbmShard>();
+
+            [ConfigurationSection("shard")]
+            public DbmShard[] ShardNodes
+            {
+                get
+                {
+                    if (shardList != null)
+                        return shardList.ToArray();
+
+                    return null;
+                }
+
+                set
+                {
+                    if (shardList == null)
+                        shardList = new List<DbmShard>();
+
+                    shardList.Clear();
+
+                    if (value != null)
+                    {
+                        shardList.AddRange(value);
+                    }
+
+                }
+            }
+
+
+            #region ICloneable Member
+            public object Clone()
+            {
+                DbmShards dbmShards = new DbmShards();
+                dbmShards.ShardNodes = ShardNodes != null ? (DbmShard[])ShardNodes.Clone() : null;
+
+                return dbmShards;
+            }
+            #endregion
+
+            #region ICompactSerializable Members
+            public void Deserialize(Common.Serialization.IO.CompactReader reader)
+            {
+                ShardNodes = reader.ReadObject() as DbmShard[];
+            }
+
+            public void Serialize(Common.Serialization.IO.CompactWriter writer)
+            {
+                writer.WriteObject(ShardNodes);
+            }
+            #endregion
+
+            
+        }
+}

@@ -1,0 +1,12 @@
+import "AuthenticationToken.proto";
+
+option java_outer_classname="AuthenticationCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message AuthenticationCommand
+{
+	optional AuthenticationToken authenticationToken = 1;
+	optional string connectionString = 2;
+	optional string processID = 3;	
+}

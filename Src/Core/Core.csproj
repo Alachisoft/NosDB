@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{837348C5-8A3D-41E7-8E90-FD82F591FFF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alachisoft.NosDB.Core</RootNamespace>
+    <AssemblyName>Alachisoft.NosDB.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>nosdboss.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C5">
+      <HintPath>..\..\Resources\C5\C5.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers, Version=2.4.1.555, Culture=neutral, PublicKeyToken=55f7125234beb589, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Resources\protobufcsharp\net40\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers.Serialization">
+      <HintPath>..\..\Resources\protobufcsharp\net40\Google.ProtocolBuffers.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="LightningDB, Version=0.0.0.0, Culture=neutral, PublicKeyToken=8a1e00327893b9ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Resources\LighteningDB\LightningDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Resources\Json.net\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\DbmClustersConfiguration.cs" />
+    <Compile Include="Configuration\DbmConfigServer.cs" />
+    <Compile Include="Configuration\DbmShard.cs" />
+    <Compile Include="Configuration\management\ConfigSessionParams.cs" />
+    <Compile Include="Configuration\management\RemoteConfigurationManager.cs" />
+    <Compile Include="Configuration\DbmClusterConfiguration.cs" />
+    <Compile Include="Configuration\DbmConfigServers.cs" />
+    <Compile Include="Configuration\DbmNodeconfiguration.cs" />
+    <Compile Include="Configuration\DbmShards.cs" />
+    <Compile Include="Configuration\Recovery\CsBackupableEntities.cs" />
+    <Compile Include="Configuration\Recovery\ConfigurationBackupJob.cs" />
+    <Compile Include="Configuration\Recovery\ConfigurationRestoreJob.cs" />
+    <Compile Include="Configuration\Recovery\ConfigurationRecoveryJobBase.cs" />
+    <Compile Include="Configuration\Recovery\DifferentialRestoreJobInfo.cs" />
+    <Compile Include="Configuration\Recovery\DIFKey.cs" />
+    <Compile Include="Configuration\Recovery\IConfigOperationExecutor.cs" />
+    <Compile Include="Configuration\Recovery\RecoveryManager.cs" />
+    <Compile Include="Configuration\Recovery\ClusterRecoveryJob.cs" />
+    <Compile Include="Configuration\RPC\ManagementProvider.cs" />
+    <Compile Include="Configuration\SecurityConfig\SecurityConfiguration.cs" />
+    <Compile Include="Configuration\Services\Client\ConfigurationChannelFormatter.cs" />
+    <Compile Include="Configuration\Services\CollectionBucketStatistics.cs" />
+    <Compile Include="Configuration\Services\ConfigurationCluster.cs" />
+    <Compile Include="Configuration\Services\ConfigurationStore.cs" />
+    <Compile Include="Configuration\Services\HeartbeatReporting.cs" />
+    <Compile Include="Configuration\Services\ConfigServerHeartBeatTask.cs" />
+    <Compile Include="Configuration\Services\ITaskInfo.cs" />
+    <Compile Include="Configuration\Services\ITransactionListener.cs" />
+    <Compile Include="Configuration\Services\MembershipData.cs" />
+    <Compile Include="Configuration\Services\MetaStore.cs" />
+    <Compile Include="Configuration\Services\ReplicationArgs.cs" />
+    <Compile Include="Configuration\Services\ReplicationType.cs" />
+    <Compile Include="Configuration\Services\ShardCollectionStats.cs" />
+    <Compile Include="Configuration\Services\TaskType.cs" />
+    <Compile Include="DBEngine\DatabaseEngineFactory.cs" />
+    <Compile Include="DBEngine\CommandInfo.cs" />
+    <Compile Include="DBEngine\DBEngineFormatter.cs" />
+    <Compile Include="DBEngine\ClientSession.cs" />
+    <Compile Include="DBEngine\ClientSessionManager.cs" />
+    <Compile Include="Configuration\RPC\ConfigurationProvider.cs" />
+    <Compile Include="Configuration\Services\Client\InProcConfigurationClient.cs" />
+    <Compile Include="Configuration\Services\Client\InProcConfigurationSession.cs" />
+    <Compile Include="Configuration\Services\Client\InProcShardConfigurationSession.cs" />
+    <Compile Include="Configuration\Services\ConfigurationHost.cs" />
+    <Compile Include="Configuration\Services\ConfigurationServer.cs" />
+    <Compile Include="Configuration\Services\ConfigurationSession.cs" />
+    <Compile Include="Configuration\Services\SessionManager.cs" />
+    <Compile Include="Configuration\Services\ShardConfigurationSession.cs" />
+    <Compile Include="DBEngine\IClientDisconnection.cs" />
+    <Compile Include="DBEngine\IDatabaseEngineFactory.cs" />
+    <Compile Include="DBEngine\Management\IManagementSession.cs" />
+    <Compile Include="DBEngine\Management\ShardIdentity.cs" />
+    <Compile Include="DBEngine\ReaderInfo.cs" />
+    <Compile Include="DBEngine\Management\RemoteManagementSession.cs" />
+    <Compile Include="DBEngine\Management\ManagementServer.cs" />
+    <Compile Include="DBEngine\Management\ManagementSession.cs" />
+    <Compile Include="DBEngine\Management\ManagementSessionListener.cs" />
+    <Compile Include="DBEngine\Management\ManagementHost.cs" />
+    <Compile Include="DBEngine\RequestParser.cs" />
+    <Compile Include="DBEngine\StreamReader.cs" />
+    <Compile Include="Management\ManagementInfo.cs" />
+    <Compile Include="Management\NosDbManager.cs" />
+    <Compile Include="Monitoring\ClientProcessStats.cs" />
+    <Compile Include="Monitoring\Configuration\ConfigrationMonitorSession.cs" />
+    <Compile Include="Monitoring\Configuration\IConfigurationMonitor.cs" />
+    <Compile Include="Monitoring\Shard\EventViewerEvent.cs" />
+    <Compile Include="Monitoring\Shard\IMonitorServer.cs" />
+    <Compile Include="Monitoring\Shard\MonitorChannelFormatter.cs" />
+    <Compile Include="Monitoring\Shard\MonitorServer.cs" />
+    <Compile Include="Monitoring\Shard\MonitorSessionListener.cs" />
+    <Compile Include="DBEngine\Management\ShardHost.cs" />
+    <Compile Include="Queries\Filters\OrderByPredicate.cs" />
+    <Compile Include="Queries\Filters\Predicator.cs" />
+    <Compile Include="Queries\Filters\DistinctPredicate.cs" />
+    <Compile Include="Queries\Filters\KeyPredicate.cs" />
+    <Compile Include="Queries\Filters\SpecialCountPredicate.cs" />
+    <Compile Include="Recovery\JobInfoObject.cs" />
+    <Compile Include="Recovery\Persistence\BackupFile.cs" />
+    <Compile Include="Recovery\Persistence\DataSlice.cs" />
+    <Compile Include="Recovery\Persistence\PersistenceContext.cs" />
+    <Compile Include="Recovery\Persistence\PersistenceIOBase.cs" />
+    <Compile Include="Recovery\Persistence\RecoveryConfigReader.cs" />
+    <Compile Include="Recovery\Persistence\RecoveryPersistenceQueue.cs" />
+    <Compile Include="Recovery\Persistence\Segment.cs" />
+    <Compile Include="Recovery\Persistence\SegmentManager.cs" />
+    <Compile Include="Recovery\Persistence\SliceFacilitator.cs" />
+    <Compile Include="Recovery\RecoveryJobs\DatabaseBackupJob.cs" />
+    <Compile Include="Recovery\RecoveryJobs\RecoveryJobBase.cs" />
+    <Compile Include="Recovery\RecoveryJobs\DatabaseRestoreJob.cs" />
+    <Compile Include="Recovery\ShardRecoveryManager.cs" />
+    <Compile Include="Recovery\Persistence\RecoveryIOWriter.cs" />
+    <Compile Include="Recovery\RecoveryPersistenceManager.cs" />
+    <Compile Include="Recovery\Persistence\RecoveryIOReader.cs" />
+    <Compile Include="Security\Impl\ConfigSecurityServer.cs" />
+    <Compile Include="Security\Impl\CSSecurityDatabase.cs" />
+    <Compile Include="Security\Impl\DbSSecurityDatabase.cs" />
+    <Compile Include="Security\Impl\SecurityManager.cs" />
+    <Compile Include="Security\Impl\DbSecurityServer.cs" />
+    <Compile Include="Security\Impl\SessionId.cs" />
+    <Compile Include="Security\Interfaces\ILogin.cs" />
+    <Compile Include="Security\Impl\Login.cs" />
+    <Compile Include="Security\Interfaces\ISecurityDatabase.cs" />
+    <Compile Include="Security\Interfaces\ISecurityManager.cs" />
+    <Compile Include="LMDBDataReader.cs" />
+    <Compile Include="Security\Interfaces\ISecurityServer.cs" />
+    <Compile Include="ShardChannelFormatter.cs" />
+    <Compile Include="Statistics\PerfInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Statistics\PerfInstaller.Designer.cs">
+      <DependentUpon>PerfInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\DatabaseStatsCollector.cs" />
+    <Compile Include="Statistics\ShardStatsCollector.cs" />
+    <Compile Include="Storage\Caching\CacheItem.cs" />
+    <Compile Include="Storage\Caching\CacheStore.cs" />
+    <Compile Include="Storage\Caching\DocumentCache.cs" />
+    <Compile Include="Storage\Caching\Evictions\EvictionHint.cs" />
+    <Compile Include="Storage\Caching\Evictions\EvictionHintType.cs" />
+    <Compile Include="Storage\Caching\Evictions\EvictionIndex.cs" />
+    <Compile Include="Storage\Caching\Evictions\EvictionIndexEntry.cs" />
+    <Compile Include="Storage\Caching\Evictions\LruEvictionPolicy.cs" />
+    <Compile Include="Storage\Caching\Evictions\TimestampHint.cs" />
+    <Compile Include="Storage\Caching\FirstComeFirstServe.cs" />
+    <Compile Include="Storage\Caching\PersistenceDeleteOperation.cs" />
+    <Compile Include="Storage\Caching\PersistenceFailOperation.cs" />
+    <Compile Include="Storage\Caching\PersistenceInsertOperation.cs" />
+    <Compile Include="Storage\Caching\PersistenceOperation.cs" />
+    <Compile Include="Storage\Caching\PersistenceUpdateOperation.cs" />
+    <Compile Include="Storage\Collections\BucketKeysFilterEnumerator.cs" />
+    <Compile Include="Storage\Collections\ICollectionStore.cs" />
+    <Compile Include="Storage\Collections\BaseCollection.cs" />
+    <Compile Include="IDBCollection.cs" />
+    <Compile Include="IDataReader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\Caching\Evictions\IEvictionPolicy.cs" />
+    <Compile Include="Storage\Caching\ICache.cs" />
+    <Compile Include="Storage\Caching\ICacheFactory.cs" />
+    <Compile Include="Storage\Collections\UserCollection.cs" />
+    <Compile Include="Storage\IHandleBucketInfoTask.cs" />
+    <Compile Include="Storage\Indexing\AttributeValueSerializer.cs" />
+    <Compile Include="Storage\Indexing\BoundingBox.cs" />
+    <Compile Include="Storage\Indexing\BPlusPersistanceManager.cs" />
+    <Compile Include="Storage\Indexing\IBPlusPersister.cs" />
+    <Compile Include="Storage\Indexing\IndexOpSerializer.cs" />
+    <Compile Include="Storage\Indexing\MetadataIndexDisk.cs" />
+    <Compile Include="Storage\Indexing\MetaDataIndexOperation.cs" />
+    <Compile Include="Storage\Indexing\MetaDataIndexTransaction.cs" />
+    <Compile Include="Storage\LockManager.cs" />
+    <Compile Include="Storage\ObjectStore.cs" />
+    <Compile Include="Storage\Operations\DdlOperation.cs" />
+    <Compile Include="Storage\Operations\DdlOperationType.cs" />
+    <Compile Include="Storage\Operations\DeleteResult.cs" />
+    <Compile Include="Storage\Operations\GetResult.cs" />
+    <Compile Include="Storage\Operations\InsertResult.cs" />
+    <Compile Include="Storage\Operations\OperationResult.cs" />
+    <Compile Include="Storage\DatabaseContext.cs" />
+    <Compile Include="DBEngine\DataBaseEngine.cs" />
+    <Compile Include="Storage\DatabaseStore.cs" />
+    <Compile Include="Storage\Exceptions\TransactionAobrtException.cs" />
+    <Compile Include="Storage\Exceptions\TransactionComittedException.cs" />
+    <Compile Include="Storage\Exceptions\TransactionException.cs" />
+    <Compile Include="Storage\Indexing\BPlusIndex.cs" />
+    <Compile Include="Storage\Indexing\IIndexFactory.cs" />
+    <Compile Include="Storage\Indexing\CollectionIndexManager.cs" />
+    <Compile Include="Storage\Indexing\MetadataIndex.cs" />
+    <Compile Include="Storage\Operations\InsertOperation.cs" />
+    <Compile Include="Storage\Operations\GetOperation.cs" />
+    <Compile Include="Storage\Operations\Operation.cs" />
+    <Compile Include="Storage\Operations\OperationType.cs" />
+    <Compile Include="Storage\Operations\RemoveOperation.cs" />
+    <Compile Include="Storage\Operations\ReplaceOperation.cs" />
+    <Compile Include="Storage\Operations\ReplaceResult.cs" />
+    <Compile Include="Storage\Operations\UpdateOperation.cs" />
+    <Compile Include="Storage\Operations\UpdateResult.cs" />
+    <Compile Include="Storage\Providers\CollectionMetadata.cs" />
+    <Compile Include="Storage\Providers\DbMetadata.cs" />
+    <Compile Include="Storage\Providers\FileMetadata.cs" />
+    <Compile Include="Storage\Providers\FileTransaction.cs" />
+    <Compile Include="Storage\Providers\IDocumentStore.cs" />
+    <Compile Include="Storage\Providers\IFilePersistenceProvider.cs" />
+    <Compile Include="Storage\Providers\IPersistenceManager.cs" />
+    <Compile Include="Storage\Providers\IPersistenceProvider.cs" />
+    <Compile Include="Storage\Providers\LMDB\LMDBCollection.cs" />
+    <Compile Include="Storage\Providers\LMDB\LMDBErrorCodes.cs" />
+    <Compile Include="Storage\Providers\LMDB\LMDBPersistenceProvider.cs" />
+    <Compile Include="Storage\Providers\KeyMetadata.cs" />
+    <Compile Include="Storage\Exceptions\MDBExpansionException.cs" />
+    <Compile Include="Storage\Providers\LMDB\StringArrayConverter.cs" />
+    <Compile Include="Storage\Providers\PersistenceManager.cs" />
+    <Compile Include="Storage\Providers\PersistenceManagerTransaction.cs" />
+    <Compile Include="Storage\Providers\StorageManagerBase.cs" />
+    <Compile Include="Storage\Providers\ProviderFactory.cs" />
+    <Compile Include="Storage\Providers\StorageProviderFactory.cs" />
+    <Compile Include="Storage\Providers\StorageResult.cs" />
+    <Compile Include="Queries\ParseTree\DML\DataManuplationQuery.cs" />
+    <Compile Include="Queries\IQueryable.cs" />
+    <Compile Include="Queries\IQueryEngine.cs" />
+    <Compile Include="Queries\IQueryExecutionContext.cs" />
+    <Compile Include="Queries\Optimizer\CostBasedOptimizer.cs" />
+    <Compile Include="Queries\Optimizer\IQueryOptimizer.cs" />
+    <Compile Include="Queries\Optimizer\QueryPlan.cs" />
+    <Compile Include="Queries\Optimizer\RuleBasedOptimizer.cs" />
+    <Compile Include="Storage\Providers\StorageManagerMultiFile.cs" />
+    <Compile Include="Storage\Providers\StorageManagerSingleFile.cs" />
+    <Compile Include="Queries\Results\GroupResult.cs" />
+    <Compile Include="Queries\Results\DiskResultSet.cs" />
+    <Compile Include="Queries\Results\HashedResultSet.cs" />
+    <Compile Include="Queries\Results\QueryResult.cs" />
+    <Compile Include="Queries\Results\QueryResultManager.cs" />
+    <Compile Include="Queries\Results\IQueryResult.cs" />
+    <Compile Include="Queries\Results\ResultSetMorpher.cs" />
+    <Compile Include="Queries\Results\ResultWrapper.cs" />
+    <Compile Include="Queries\Results\ResultWrapperList.cs" />
+    <Compile Include="Storage\Providers\StoreResult.cs" />
+    <Compile Include="Storage\SystemDatabaseStore.cs" />
+    <Compile Include="Storage\UpdateBucketInfoTask.cs" />
+    <Compile Include="Toplogies\Exceptions\LocalShardException.cs" />
+    <Compile Include="Toplogies\Exceptions\RemoteShardException.cs" />
+    <Compile Include="Toplogies\Exceptions\ShardException.cs" />
+    <Compile Include="Toplogies\Exceptions\StateTransferException.cs" />
+    <Compile Include="Toplogies\Exceptions\SuspectedException.cs" />
+    <Compile Include="Toplogies\Exceptions\TimeoutException.cs" />
+    <Compile Include="Toplogies\IDatabaseTopology.cs" />
+    <Compile Include="Toplogies\Impl\Cluster\ClusterManager.cs" />
+    <Compile Include="Toplogies\Impl\Cluster\ResponseCollection.cs" />
+    <Compile Include="Toplogies\Impl\ConfigurationTasks\ConfigChangeDeliverTask.cs" />
+    <Compile Include="Toplogies\Impl\ConfigurationTasks\ConfigChangeParams.cs" />
+    <Compile Include="Toplogies\Impl\ConfigurationTasks\ConfigurationChangeTask.cs" />
+    <Compile Include="Toplogies\Impl\ConfigurationTasks\ClusterConfigurationManager.cs" />
+    <Compile Include="Toplogies\Impl\ConnectionRestoration\BrokenConnectionEntry.cs" />
+    <Compile Include="Toplogies\Impl\ConnectionRestoration\BrokenConnectionInfo.cs" />
+    <Compile Include="Toplogies\Impl\ConnectionRestoration\ConnectionRestorationManager.cs" />
+    <Compile Include="Toplogies\Impl\ConnectionRestoration\IConnectionRestoration.cs" />
+    <Compile Include="Toplogies\Impl\ConnectionRestoration\IConnectionRestorationListener.cs" />
+    <Compile Include="Toplogies\Impl\HeartbeatTasks\ConnectivityStatus.cs" />
+    <Compile Include="Toplogies\Impl\HeartbeatTasks\HeartbeatManager.cs" />
+    <Compile Include="Toplogies\Impl\HeartbeatTasks\HeartbeatInfo.cs" />
+    <Compile Include="Toplogies\Impl\HeartbeatTasks\LocalShardCheckHeartbeatTask.cs" />
+    <Compile Include="Toplogies\Impl\HeartbeatTasks\LocalShardHeartbeatReporting.cs" />
+    <Compile Include="Toplogies\Impl\HeartbeatTasks\LocalShardSendHeartbeatTask.cs" />
+    <Compile Include="Toplogies\Impl\HeartbeatTasks\NodeToCSHeartbeatTask.cs" />
+    <Compile Include="Toplogies\Impl\MembershipManagement\Activity.cs" />
+    <Compile Include="Toplogies\Impl\MembershipManagement\Election.cs" />
+    <Compile Include="Toplogies\Impl\MembershipManagement\ElectionBasedMembershipStrategy.cs" />
+    <Compile Include="Toplogies\Impl\MembershipManagement\ElectionManager.cs" />
+    <Compile Include="Toplogies\Impl\MembershipManagement\ElectionVote.cs" />
+    <Compile Include="Toplogies\Impl\MembershipManagement\IMembershipStrategy.cs" />
+    <Compile Include="Toplogies\Impl\MembershipManagement\MembershipChangeArgs.cs" />
+    <Compile Include="Toplogies\Impl\MembershipManagement\MembershipManager.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\ResolveChannelDispute.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\ShardServerImpl\ManagementShardServer.cs" />
+    <Compile Include="Storage\DatabasesManager.cs" />
+    <Compile Include="Storage\IDatabasesManager.cs" />
+    <Compile Include="Toplogies\Impl\PartitionOfReplica.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\RemoteShard.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\LocalShard.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\ShardServerImpl\ShardServer.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\AllocatorTask.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\BucketRemoval.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\BucketRemovalInfo.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\BucketsPack.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\BucketTxfrInfo.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\CollectionRemvoalInfo.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\DatabaseStateTransferManager.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Enumerators\BucketKeysEnumerator.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\IAllocator.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\ICorresponder.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\IResource.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\IResourceRemovalInfo.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\IStateTransferTask.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\IStateTxfrStatusListener.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\LoggingIdentity.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\NodeStateTranferManager.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\IDispatcher.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\IStateTxfrOperationListener.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\LocalDeleteOperation.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\LocalDeleteResponse.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\LocalDropCollectionOperation.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\LocalGetOperation.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\LocalGetResponse.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\LocalInsertOperation.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\LocalInsertResponse.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\LocalOperation.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\LocalResponse.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\StateTransferOperation.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\PayloadInfo.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\ResourceManager.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\ResourceType.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\StateTransferKey.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\StateTransferTask.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\StateTxfrCorresponder.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\StateTxfrInfo.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\StateTxfrStatus.cs" />
+    <Compile Include="Toplogies\NodeContext.cs" />
+    <Compile Include="Util\CompressionUtil.cs" />
+    <Compile Include="Util\CPUUsage.cs" />
+    <Compile Include="Util\DirectoryUtil.cs" />
+    <Compile Include="Util\MiscUtil.cs" />
+    <Compile Include="Util\MSHyperVThread.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nosdboss.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Queries\Util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\3rd Party\CSharpTest.Net.Collections\src\CSharpTest.Net.Collections\CSharpTest.Net.Collections.csproj">
+      <Project>{fbd5edd1-445c-46d1-a0b2-4b68cb51eadb}</Project>
+      <Name>CSharpTest.Net.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{56286731-8887-4cf0-aa9b-6a882db8df77}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Serialization\Serialization.csproj">
+      <Project>{fe74c979-a67e-4bb3-abc4-054b2471d683}</Project>
+      <Name>Serialization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\..\..\Resources\LMDB dependencies\*" "$(ProjectDir)\bin\$(ConfigurationName)\" /Y /I
+xcopy /Y "$(TargetPath)" "$(SolutionDir)build\Server\4x\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

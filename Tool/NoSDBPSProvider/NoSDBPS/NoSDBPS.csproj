@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{911F7DA9-C91D-402C-89BA-85FE15DC78EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alachisoft.NosDB.NoSDBPS</RootNamespace>
+    <AssemblyName>NosDBPS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alachisoft.NosDB.Client, Version=1.3.0.0, Culture=neutral, PublicKeyToken=8a1e00327893b9ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Src\build\Server\4x\Alachisoft.NosDB.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Alachisoft.NosDB.Common, Version=1.3.0.0, Culture=neutral, PublicKeyToken=8a1e00327893b9ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Src\build\Server\4x\Alachisoft.NosDB.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Alachisoft.NosDB.Core, Version=1.3.0.0, Culture=neutral, PublicKeyToken=8a1e00327893b9ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Src\build\Server\4x\Alachisoft.NosDB.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Alachisoft.NosDB.Distributor, Version=1.3.0.0, Culture=neutral, PublicKeyToken=8a1e00327893b9ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Src\build\Server\4x\Alachisoft.NosDB.Distributor.dll</HintPath>
+    </Reference>
+    <Reference Include="Alachisoft.NosDB.Serialization, Version=1.3.0.0, Culture=neutral, PublicKeyToken=8a1e00327893b9ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Src\build\Server\4x\Alachisoft.NosDB.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpTest.Net.Collections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8a1e00327893b9ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Src\build\Server\4x\CSharpTest.Net.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Esent.Interop">
+      <HintPath>..\..\..\Src\Client\bin\Debug\Esent.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers">
+      <HintPath>..\..\..\Src\Client\bin\Debug\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers.Serialization">
+      <HintPath>..\..\..\Src\Client\bin\Debug\Google.ProtocolBuffers.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="LightningDB">
+      <HintPath>..\..\..\Src\Client\bin\Debug\LightningDB.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Src\Client\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Src\build\Server\4x\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\..\Src\Client\bin\Debug\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0\System.Management.Automation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientOperations\ExportData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\ImportData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\InvokeSQL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\QueryType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\StressTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\TestPOCO\DataLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\TestPOCO\Order.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\TestPOCO\OrderDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\TestPOCO\PocoBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\ThreadTest\ThreadContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientOperations\ThreadTest\ThreadTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigManager\CreateDatabaseCluster.cs" />
+    <Compile Include="ConfigManager\RemoveConfigurationCluster.cs" />
+    <Compile Include="ConfigurationConnection.cs" />
+    <Compile Include="GetRecoveryStatus.cs" />
+    <Compile Include="ConfigManager\DisconnectDatabseCluster.cs" />
+    <Compile Include="ConfigManager\DumpClusterConfiguration.cs" />
+    <Compile Include="CreateUser.cs" />
+    <Compile Include="Migration\MoveCollection.cs" />
+    <Compile Include="NosDBInstallationType.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\CollectionsDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\CollectionValueDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\ConfigClusterInfo.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\ConfigManagerDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\ConfigurationNodesDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\IDatabaseContext.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\DatabasesDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\DatabaseValueDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\EndNodeDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\IndexValueDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\IndicesValueDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\LocalDatabaseDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\NodeDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\NoSDbDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\Util\MultiLineRow.cs" />
+    <Compile Include="NoSDbPowershellProvider\Util\PathType.cs" />
+    <Compile Include="NoSDbPowershellProvider\Util\ProviderUtil.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\ServerValueDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\ShardsDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\PathDetail\ShardValueDetail.cs" />
+    <Compile Include="NoSDbPowershellProvider\Util\PrintableTable.cs" />
+    <Compile Include="NoSDbPowershellProvider\Util\ITableRow.cs" />
+    <Compile Include="NoSDbPowershellProvider\Util\TableRow.cs" />
+    <Compile Include="PowerShellAdapter.cs" />
+    <Compile Include="ShardsInfrastructure\AddShard.cs" />
+    <Compile Include="ConfigManager\ConnectToConfigurationServer.cs" />
+    <Compile Include="NoSDbPowershellProvider\NoSDBPSDriveInfo.cs" />
+    <Compile Include="NoSDbPowershellProvider\Provider.cs" />
+    <Compile Include="NoSDbPowershellProvider\ServerDetail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShardsInfrastructure\RemoveShard.cs" />
+    <Compile Include="ShardsInfrastructure\StartShard.cs" />
+    <Compile Include="ShardsInfrastructure\StopShard.cs" />
+    <Compile Include="SubmitRecoveryJob.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NosDBPS.psd1" />
+    <None Include="NosDBPS\NosDBPS.psd1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Script\InstallProvider.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NosDBPS.dll-Help.xml" />
+    <Content Include="NosDBPS\NosDBPS.dll-Help.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y "$(TargetPath)" "$(SolutionDir)build\Server\4x\"
+xcopy /Y "$(TargetDir)\NosDBPS\NosDBPS.psd1" "$(SolutionDir)build\Server\4x\"
+xcopy /Y "$(TargetDir)\NosDBPS\NosDBPS.dll-Help.xml" "$(SolutionDir)build\Server\4x\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+import "Exception.proto";
+ 
+option java_outer_classname="ManagementResponseProtocol";
+package Alachisoft.NoSDB.Common.Protobuf.ManagementCommands;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+message ManagementResponse {
+
+	optional int64 requestId = 1;	
+	optional Exception exception = 2;
+	optional int32 version = 3;
+	optional bytes returnVal = 4;	
+	optional string methodName = 5;
+
+}

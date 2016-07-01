@@ -1,0 +1,9 @@
+
+option java_outer_classname="InsertDocumentsCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message InsertDocumentsCommand 
+{	
+	repeated string documents = 1;
+}

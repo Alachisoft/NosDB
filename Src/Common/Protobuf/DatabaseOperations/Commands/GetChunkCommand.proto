@@ -1,0 +1,9 @@
+option java_outer_classname="GetChunkCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message GetChunkCommand 
+{	
+	optional int32 lastChunkId = 1;
+	optional string readerUID = 2;
+}

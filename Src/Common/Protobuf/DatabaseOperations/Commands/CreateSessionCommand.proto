@@ -1,0 +1,15 @@
+option java_outer_classname="CreateSessionCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message CreateSessionCommand 
+{
+	optional int32 clientId = 1;
+	optional Credential credential = 2;
+}
+
+message Credential
+{
+	optional bytes userName = 1;
+	optional bytes password = 2;
+}

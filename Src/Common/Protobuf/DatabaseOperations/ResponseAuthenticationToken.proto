@@ -1,0 +1,9 @@
+option java_outer_classname="ResponseAuthenticationTokenProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message ResponseAuthenticationToken
+{
+	optional int32 status = 1;
+	optional bytes token = 2;
+}

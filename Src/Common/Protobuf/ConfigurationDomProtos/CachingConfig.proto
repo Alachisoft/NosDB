@@ -1,0 +1,11 @@
+
+
+option java_outer_classname="CachingConfigProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+message CachingConfig 
+{	
+	
+}
+    
+    

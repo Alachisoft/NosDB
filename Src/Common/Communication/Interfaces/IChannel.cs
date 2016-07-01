@@ -1,0 +1,50 @@
+﻿// /*
+// * Copyright (c) 2016, Alachisoft. All Rights Reserved.
+// *
+// * Licensed under the Apache License, Version 2.0 (the "License");
+// * you may not use this file except in compliance with the License.
+// * You may obtain a copy of the License at
+// *
+// * http://www.apache.org/licenses/LICENSE-2.0
+// *
+// * Unless required by applicable law or agreed to in writing, software
+// * distributed under the License is distributed on an "AS IS" BASIS,
+// * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// * See the License for the specific language governing permissions and
+// * limitations under the License.
+// */
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Alachisoft.NosDB.Common.Communication
+{
+    public interface IChannel
+    {
+        //RTD: Temporary solution - a better way out needs to be devised.
+        //Problem: The start of the receiving thread needs to be controlled for some scenarios so this was added.
+        bool Connect(bool shouldStartReceiver);
+
+        bool Connected { get; }
+
+        void Disconnect();
+
+        bool SendMessage(object message);
+
+        void RegisterEventListener(IChannelEventListener listener);
+
+        void UnRegisterEventListener(IChannelEventListener listener);
+
+        IChannelFormatter Formatter { get; set; }
+
+        string Name { get; set; }
+
+        string Server { get; }
+
+        bool UsesAsynchronousIO { get; }
+
+        float ClientsBytesSent { get; }
+
+        float ClientBytesReceived { get; }
+    }
+}

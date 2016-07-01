@@ -1,0 +1,10 @@
+import "FailedDocument.proto";
+
+option java_outer_classname="InsertDocumentsResponseProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message InsertDocumentsResponse 
+{
+    repeated FailedDocument failedDocuments = 1; 
+}

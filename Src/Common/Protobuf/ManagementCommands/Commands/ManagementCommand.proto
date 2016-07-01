@@ -1,0 +1,21 @@
+option java_outer_classname="NCManagementCommandProtocol";
+package Alachisoft.NoSDB.Common.Protobuf.ManagementCommands;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message ManagementCommand 
+{	
+	optional int64 requestId = 1;
+	optional int32 commandVersion = 2 [default=0];
+	optional string methodName = 3;
+	optional int32 overload = 4;
+	optional bytes arguments = 5;
+	optional string objectName = 6;	
+	optional SourceType source = 7;
+	
+	enum SourceType 
+	{
+		CLIENT = 1;
+		SHARD = 2;
+		MONITOR = 3;
+	}	
+}

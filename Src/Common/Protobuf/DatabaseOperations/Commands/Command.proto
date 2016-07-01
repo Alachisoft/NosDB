@@ -1,0 +1,71 @@
+import "InsertDocumentsCommand.proto";
+import "DeleteDocumentsCommand.proto";
+import "GetDocumentsCommand.proto";
+import "UpdateCommand.proto";
+import "ReadQueryCommand.proto";
+import "WriteQueryCommand.proto";
+import "CreateCollectionCommand.proto";
+import "DropCollectionCommand.proto";
+import "CreateSessionCommand.proto";
+import "DropSessionCommand.proto";
+import "CreateIndexCommand.proto";
+import "DropIndexCommand.proto";
+import "GetChunkCommand.proto";
+import "DisposeReaderCommand.proto";
+import "ReplaceDocumentsCommand.proto";
+import "AuthenticationCommand.proto";
+import "SessionId.proto";
+import "InitDatabaseCommand.proto";
+
+
+option java_outer_classname="CommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message Command
+{
+	optional Type type = 1;
+	optional int64 requestId = 2;
+	optional string databaseName = 3;
+	optional string collectionName = 4;
+	optional int32 flag = 5;
+	optional SessionId sessionId = 6;
+	optional bool noResponse = 7;
+	optional InsertDocumentsCommand insertDocumentsCommand = 8;
+	optional DeleteDocumentsCommand deleteDocumentsCommand = 9;
+	optional GetDocumentsCommand getDocumentsCommand = 10;
+	optional UpdateCommand updateCommand = 11;
+	optional ReadQueryCommand readQueryCommand = 12;
+	optional WriteQueryCommand writeQueryCommand = 13;
+	optional CreateCollectionCommand createCollectionCommand = 14;
+	optional DropCollectionCommand dropCollectionCommand = 15;
+	optional CreateSessionCommand createSessionCommand = 16;
+	optional DropSessionCommand dropSessionCommand = 17;
+	optional CreateIndexCommand createIndexCommand = 18;
+	optional DropIndexCommand dropIndexCommand = 19;
+	optional GetChunkCommand getChunkCommand = 20;
+	optional DisposeReaderCommand disposeReaderCommand = 21;
+	optional ReplaceDocumentsCommand replaceDocumentsCommand = 22;
+	optional AuthenticationCommand authenticationCommand=23;
+	optional InitDatabaseCommand initDatabaseCommand = 24;
+	enum Type
+	{
+		INSERT_DOCUMENTS = 1;
+		DELETE_DOCUMENTS = 2;
+        GET_DOCUMENTS = 3;
+		UPDATE = 4;
+        READ_QUERY = 5;
+        WRITE_QUERY = 6;
+		CREATE_COLLECTION = 7;
+		DROP_COLLECTION = 8;
+		CREATE_SESSION = 9;
+		DROP_SESSION = 10;
+		CREATE_INDEX = 11;
+		DROP_INDEX = 12;
+		GET_CHUNK = 13;
+		DISPOSE_READER = 14;
+		REPLACE_DOCUMENTS = 15;
+		AUTHENTICATION=16;
+		INIT_DATABASE = 17;
+	}
+}

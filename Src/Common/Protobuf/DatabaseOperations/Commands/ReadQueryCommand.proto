@@ -1,0 +1,10 @@
+import "QueryBuilder.proto";
+
+option java_outer_classname="ReadQueryCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message ReadQueryCommand 
+{	
+	optional QueryBuilder query = 1;
+}

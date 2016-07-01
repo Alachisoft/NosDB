@@ -1,0 +1,11 @@
+
+option java_outer_classname="IndexAttributeProtoProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message IndexAttributeProto 
+{	
+	optional string name =1 ;
+	optional string order=2;
+	
+}

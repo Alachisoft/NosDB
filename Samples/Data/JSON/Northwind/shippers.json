@@ -1,0 +1,20 @@
+[
+  {
+    "ID": 1,
+    "CompanyName": "Speedy Express",
+    "Phone": "(503) 555-9831",
+    "_key": "16bde0b8-a7d2-4ed9-b137-a56cdd67afd3"
+  },
+  {
+    "ID": 2,
+    "CompanyName": "United Package",
+    "Phone": "(503) 555-3199",
+    "_key": "4baca2ae-427b-4697-810e-056ddda6b528"
+  },
+  {
+    "ID": 3,
+    "CompanyName": "Federal Shipping",
+    "Phone": "(503) 555-9931",
+    "_key": "47e33a27-7f19-4ca6-ab48-69647b012819"
+  }
+]

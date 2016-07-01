@@ -1,0 +1,1110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56286731-8887-4CF0-AA9B-6A882DB8DF77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alachisoft.NosDB.Common</RootNamespace>
+    <AssemblyName>Alachisoft.NosDB.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>nosdboss.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C5, Version=2.2.5723.23182, Culture=neutral, PublicKeyToken=282361b99ded7e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Resources\C5\C5.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers">
+      <HintPath>..\..\Resources\protobufcsharp\net40\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers.Serialization">
+      <HintPath>..\..\Resources\protobufcsharp\net40\Google.ProtocolBuffers.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Resources\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Resources\Json.net\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Communication\ChannelRequest.cs" />
+    <Compile Include="Communication\ChannelResponse.cs" />
+    <Compile Include="Communication\ClientChannel.cs" />
+    <Compile Include="Communication\ConnectInfo.cs" />
+    <Compile Include="Communication\Exceptions\ChannelException.cs" />
+    <Compile Include="Communication\Exceptions\ConnectionException.cs" />
+    <Compile Include="Communication\Formatters\DatabaseOperationFormatter.cs" />
+    <Compile Include="Communication\IConnectionDataListener.cs" />
+    <Compile Include="Communication\Interfaces\ClientChannelFactory.cs" />
+    <Compile Include="Communication\Interfaces\DualChannelFactory.cs" />
+    <Compile Include="Communication\Interfaces\IChannelFactory.cs" />
+    <Compile Include="Communication\Interfaces\IChannelMessage.cs" />
+    <Compile Include="Communication\Interfaces\IChannel.cs" />
+    <Compile Include="Communication\Interfaces\IChannelEventListener.cs" />
+    <Compile Include="Communication\Interfaces\IChannelFormatter.cs" />
+    <Compile Include="Communication\Interfaces\IConnection.cs" />
+    <Compile Include="Communication\Interfaces\IRequest.cs" />
+    <Compile Include="Communication\Interfaces\IRequestResponseChannel.cs" />
+    <Compile Include="Communication\Interfaces\IResponse.cs" />
+    <Compile Include="Communication\Interfaces\IDualChannel.cs" />
+    <Compile Include="Communication\Interfaces\IServerChannel.cs" />
+    <Compile Include="Communication\Interfaces\ITraceProvider.cs" />
+    <Compile Include="Communication\Interfaces\IRequestListener.cs" />
+    <Compile Include="Communication\LocalChannel.cs" />
+    <Compile Include="Communication\RequestManager.cs" />
+    <Compile Include="Communication\RequestResponsePair.cs" />
+    <Compile Include="Communication\ServerChannel.cs" />
+    <Compile Include="Communication\Server\IServer.cs" />
+    <Compile Include="Communication\Server\IServerEventListener.cs" />
+    <Compile Include="Communication\Server\TcpServer.cs" />
+    <Compile Include="Communication\DualChannel.cs" />
+    <Compile Include="Communication\SessionTypes.cs" />
+    <Compile Include="Communication\TcpChannel.cs" />
+    <Compile Include="Communication\TcpConnection.cs" />
+    <Compile Include="Communication\TraceProvider.cs" />
+    <Compile Include="Configuration\ClusterConfiguration.cs" />
+    <Compile Include="Configuration\ConfigServerConfiguration.cs" />
+    <Compile Include="Configuration\DeploymentConfiguration.cs" />
+    <Compile Include="Configuration\DOM\CollectionConfigurations.cs" />
+    <Compile Include="Configuration\DOM\DatabaseConfigurations.cs" />
+    <Compile Include="Configuration\DOM\Indices.cs" />
+    <Compile Include="Configuration\DOM\PartitionKeyConfigurationAttribute.cs" />
+    <Compile Include="Configuration\ElectionResult.cs" />
+    <Compile Include="Configuration\IObjectId.cs" />
+    <Compile Include="Configuration\ReplicationConfiguration.cs" />
+    <Compile Include="Configuration\RPC\DatabaseRPCService.cs" />
+    <Compile Include="Configuration\RPC\DBService.cs" />
+    <Compile Include="Configuration\RPC\RPCService.cs" />
+    <Compile Include="Configuration\RPC\ServiceBase.cs" />
+    <Compile Include="Configuration\ServerNode.cs" />
+    <Compile Include="Configuration\Services\CappedInfo.cs" />
+    <Compile Include="Configuration\Services\ChangeType.cs" />
+    <Compile Include="Configuration\Services\Client\IConfigurationClient.cs" />
+    <Compile Include="Configuration\Services\Client\IConfigurationSessionListener.cs" />
+    <Compile Include="Configuration\Services\Client\OutProcConfigurationClient.cs" />
+    <Compile Include="Configuration\Services\Client\OutProcConfigurationSession.cs" />
+    <Compile Include="Configuration\Services\Client\OutProcShardConfigurationSession.cs" />
+    <Compile Include="Configuration\Services\CollectionInfo.cs" />
+    <Compile Include="Configuration\Services\ConfigChangeEventArgs.cs" />
+    <Compile Include="Configuration\Services\DatabaseInfo.cs" />
+    <Compile Include="Configuration\Services\ElectionId.cs" />
+    <Compile Include="Configuration\Services\EventParamName.cs" />
+    <Compile Include="Configuration\Services\Membership.cs" />
+    <Compile Include="Configuration\ServerNodes.cs" />
+    <Compile Include="Configuration\Services\ClusterInfo.cs" />
+    <Compile Include="Configuration\ConfigSettingsBase.cs" />
+    <Compile Include="Configuration\ConfigurationAttributeAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationAttributeBase.cs" />
+    <Compile Include="Configuration\ConfigurationBuilder.cs" />
+    <Compile Include="Configuration\ConfigurationCommentAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationRootAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationSectionAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationSettings.cs" />
+    <Compile Include="Configuration\CSHostSettings.cs" />
+    <Compile Include="Configuration\DBHostSettings.cs" />
+    <Compile Include="Configuration\DOM\CachingConfiguration.cs" />
+    <Compile Include="Configuration\DOM\CollectionConfiguration.cs" />
+    <Compile Include="Configuration\DOM\DatabaseConfiguration.cs" />
+    <Compile Include="Configuration\DOM\DistributionStrategyConfiguration.cs" />
+    <Compile Include="Configuration\DOM\EvictionConfiguration.cs" />
+    <Compile Include="Configuration\DOM\IndexAttribute.cs" />
+    <Compile Include="Configuration\DOM\IndexConfiguration.cs" />
+    <Compile Include="Configuration\DOM\LMDBConfiguration.cs" />
+    <Compile Include="Configuration\DOM\PartitionKeyConfiguration.cs" />
+    <Compile Include="Configuration\DOM\RecoveryConfiguration.cs" />
+    <Compile Include="Configuration\DOM\RecoveryPersistenceConfiguration.cs" />
+    <Compile Include="Configuration\DOM\StorageConfiguration.cs" />
+    <Compile Include="Configuration\DOM\StorageProviderConfiguration.cs" />
+    <Compile Include="Configuration\DynamicConfigType.cs" />
+    <Compile Include="Configuration\DynamicConfigurationSectionAttribute.cs" />
+    <Compile Include="Configuration\NonCompactField.cs" />
+    <Compile Include="Configuration\Services\IConfigurationListener.cs" />
+    <Compile Include="Configuration\Services\IConfigurationServer.cs" />
+    <Compile Include="Configuration\Services\IConfigurationSession.cs" />
+    <Compile Include="Configuration\Services\IConfigurationStore.cs" />
+    <Compile Include="Configuration\Services\IShardConfigurationSession.cs" />
+    <Compile Include="Configuration\Services\PartitionKey.cs" />
+    <Compile Include="Configuration\Services\PartitionKeyAttribute.cs" />
+    <Compile Include="Configuration\Services\NodeRole.cs" />
+    <Compile Include="Configuration\Services\ServerInfo.cs" />
+    <Compile Include="Configuration\Services\ShardInfo.cs" />
+    <Compile Include="Configuration\ShardConfiguration.cs" />
+    <Compile Include="Configuration\UserCredentials.cs" />
+    <Compile Include="ConnectionStringBuilder.cs" />
+    <Compile Include="DataStructures\BalancingResult.cs" />
+    <Compile Include="DataStructures\BigDictionary.cs" />
+    <Compile Include="DataStructures\BinaryArray.cs" />
+    <Compile Include="DataStructures\BinaryPriorityQueue.cs" />
+    <Compile Include="DataStructures\BucketStatus.cs" />
+    <Compile Include="DataStructures\ClusterActivity.cs" />
+    <Compile Include="DataStructures\Clustered\BinaryCompatibility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\BitHelper.cs" />
+    <Compile Include="DataStructures\Clustered\ClusteredArray.cs" />
+    <Compile Include="DataStructures\Clustered\ClusteredArrayList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\ClusteredHashSet.cs" />
+    <Compile Include="DataStructures\Clustered\ClusteredHashSetEqualityComparer.cs" />
+    <Compile Include="DataStructures\Clustered\ClusteredList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\ClusteredMemoryStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\ClusteredQueue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\CompatibleComparer.cs" />
+    <Compile Include="DataStructures\Clustered\ConditionalWeakTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\DependentHandle.cs" />
+    <Compile Include="DataStructures\Clustered\DoubleVector.cs" />
+    <Compile Include="DataStructures\Clustered\ExceptionArgument.cs" />
+    <Compile Include="DataStructures\Clustered\ExceptionResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\HashHelpers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\HashVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\IMemSizable.cs" />
+    <Compile Include="DataStructures\Clustered\IWellKnownStringEqualityComparer.cs" />
+    <Compile Include="DataStructures\Clustered\KeyValuePairs.cs" />
+    <Compile Include="DataStructures\Clustered\RandomizedObjectEqualityComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\Clustered\RandomizedStringEqualityComparer.cs" />
+    <Compile Include="DataStructures\Clustered\ResId.cs" />
+    <Compile Include="DataStructures\Clustered\ResourceHelper.cs" />
+    <Compile Include="DataStructures\Clustered\SR.cs" />
+    <Compile Include="DataStructures\Clustered\TargetFrameworkId.cs" />
+    <Compile Include="DataStructures\Clustered\ThrowHelper.cs" />
+    <Compile Include="DataStructures\Clustered\VectorDebugView.cs" />
+    <Compile Include="DataStructures\Clustered\__Error.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStructures\CollectionStatus.cs" />
+    <Compile Include="DataStructures\ColumnDataType.cs" />
+    <Compile Include="DataStructures\ColumnType.cs" />
+    <Compile Include="DataStructures\DatabaseMode.cs" />
+    <Compile Include="DataStructures\DatabaseStatus.cs" />
+    <Compile Include="DataStructures\DatabaseType.cs" />
+    <Compile Include="DataStructures\DistributionMode.cs" />
+    <Compile Include="DataStructures\IDataSerializer.cs" />
+    <Compile Include="DataStructures\Int32Serializer.cs" />
+    <Compile Include="DataStructures\Int64Serializer.cs" />
+    <Compile Include="DataStructures\KeyValuePair.cs" />
+    <Compile Include="DataStructures\ManualDistType.cs" />
+    <Compile Include="DataStructures\QueueDictionary.cs" />
+    <Compile Include="DataStructures\DistributionInfoData.cs" />
+    <Compile Include="DataStructures\DistributionMaps.cs" />
+    <Compile Include="DataStructures\DomainInfo.cs" />
+    <Compile Include="DataStructures\EnumerationDataChunk.cs" />
+    <Compile Include="DataStructures\EnumerationPointer.cs" />
+    <Compile Include="DataStructures\GroupEnumerationPointer.cs" />
+    <Compile Include="DataStructures\HashMapBucket.cs" />
+    <Compile Include="DataStructures\INodeReference.cs" />
+    <Compile Include="DataStructures\IOptimizedQueueOperation.cs" />
+    <Compile Include="DataStructures\IPriorityQueue.cs" />
+    <Compile Include="DataStructures\IQueueDistributionStrategy.cs" />
+    <Compile Include="DataStructures\ISizableDictionary.cs" />
+    <Compile Include="DataStructures\IStreamItem.cs" />
+    <Compile Include="DataStructures\ITreeNode.cs" />
+    <Compile Include="DataStructures\KeyValuesContainer.cs" />
+    <Compile Include="DataStructures\KeyValueStore.cs" />
+    <Compile Include="DataStructures\LinkMap.cs" />
+    <Compile Include="DataStructures\Morphable.cs" />
+    <Compile Include="DataStructures\MultiRootTree.cs" />
+    <Compile Include="DataStructures\MutableQueue.cs" />
+    <Compile Include="DataStructures\NewHashmap.cs" />
+    <Compile Include="DataStructures\OrderedList.cs" />
+    <Compile Include="DataStructures\PartShardInfo.cs" />
+    <Compile Include="DataStructures\Queue.cs" />
+    <Compile Include="DataStructures\QueueClosedException.cs" />
+    <Compile Include="DataStructures\RecordColumn.cs" />
+    <Compile Include="DataStructures\RecordSet.cs" />
+    <Compile Include="DataStructures\RedBlack.cs" />
+    <Compile Include="DataStructures\RedBlackEnumerator.cs" />
+    <Compile Include="DataStructures\RedBlackException.cs" />
+    <Compile Include="DataStructures\RedBlackNode.cs" />
+    <Compile Include="DataStructures\RedBlackNodeReference.cs" />
+    <Compile Include="DataStructures\RequestStatus.cs" />
+    <Compile Include="DataStructures\SinglyLinkedList.cs" />
+    <Compile Include="DataStructures\SlidingIndex.cs" />
+    <Compile Include="DataStructures\SRTree.cs" />
+    <Compile Include="DataStructures\SRTreeEnumerator.cs" />
+    <Compile Include="DataStructures\ThreadManager.cs" />
+    <Compile Include="DataStructures\VirtualArray.cs" />
+    <Compile Include="DataStructures\VirtualIndex.cs" />
+    <Compile Include="DataStructures\WeightageBasedPriorityQueue.cs" />
+    <Compile Include="DataStructures\WeightageBasedQueueDistribution.cs" />
+    <Compile Include="DataStructures\XrefDictionary.cs" />
+    <Compile Include="DataStructures\XReference.cs" />
+    <Compile Include="Enum\AccountType.cs" />
+    <Compile Include="Enum\AggregateFunctionType.cs" />
+    <Compile Include="Enum\ArithmeticOperation.cs" />
+    <Compile Include="Enum\AttributeValueType.cs" />
+    <Compile Include="Enum\CappedConstant.cs" />
+    <Compile Include="Enum\Condition.cs" />
+    <Compile Include="Enum\ConditionalState.cs" />
+    <Compile Include="Enum\ContextItem.cs" />
+    <Compile Include="Enum\ControlType.cs" />
+    <Compile Include="Enum\DataDefinitionType.cs" />
+    <Compile Include="Enum\DataType.cs" />
+    <Compile Include="Enum\DBObjectType.cs" />
+    <Compile Include="Enum\DistributionName.cs" />
+    <Compile Include="Enum\DistributionType.cs" />
+    <Compile Include="Enum\EvaluationType.cs" />
+    <Compile Include="Enum\EventType.cs" />
+    <Compile Include="Enum\ExecutionPreference.cs" />
+    <Compile Include="Enum\FieldDataType.cs" />
+    <Compile Include="Enum\FunctionExecutionType.cs" />
+    <Compile Include="Enum\IndexType.cs" />
+    <Compile Include="Enum\LMDBEnvOpenFlags.cs" />
+    <Compile Include="Enum\PersistenceBits.cs" />
+    <Compile Include="Enum\PredicateLevel.cs" />
+    <Compile Include="Enum\PredicateType.cs" />
+    <Compile Include="Enum\Priority.cs" />
+    <Compile Include="ErrorHandling\ErrorCodes.cs" />
+    <Compile Include="ErrorHandling\ErrorMessages.cs" />
+    <Compile Include="Exceptions\ClusterException.cs" />
+    <Compile Include="Exceptions\IndexException.cs" />
+    <Compile Include="Exceptions\InitializeException.cs" />
+    <Compile Include="Exceptions\SerializationException.cs" />
+    <Compile Include="Exceptions\RemoteException.cs" />
+    <Compile Include="Exceptions\DistributorException.cs" />
+    <Compile Include="Exceptions\LicensingException.cs" />
+    <Compile Include="Exceptions\TriggerException.cs" />
+    <Compile Include="Exceptions\UserDefinedFunctionException.cs" />
+    <Compile Include="EXIM\CSVEXIMUtil.cs" />
+    <Compile Include="EXIM\EXIMBase.cs" />
+    <Compile Include="EXIM\EXIMDataType.cs" />
+    <Compile Include="EXIM\JSONEXIMUtil.cs" />
+    <Compile Include="ExtensionsMethods.cs" />
+    <Compile Include="Interop\DBLicenseDll.cs" />
+    <Compile Include="Interop\DBRegistryDll.cs" />
+    <Compile Include="IO\CustomPathGenerator.cs" />
+    <Compile Include="IO\DefaultPathGenerator.cs" />
+    <Compile Include="IO\FileInfo.cs" />
+    <Compile Include="IO\IDataSerializer.cs" />
+    <Compile Include="JSON\CustomConverter\AddressTypeConverter.cs" />
+    <Compile Include="JSON\CustomConverter\JsonDocumentConverter.cs" />
+    <Compile Include="JSON\Expressions\IAttributeChain.cs" />
+    <Compile Include="JSON\Indexing\Bound.cs" />
+    <Compile Include="JSON\Indexing\BoundaryValueMask.cs" />
+    <Compile Include="JSON\JSONComparer.cs" />
+    <Compile Include="JSON\JsonDocumentUtil.cs" />
+    <Compile Include="Logger\CustomLayout.cs" />
+    <Compile Include="Logger\LoggerContext.cs" />
+    <Compile Include="Memory\CacheSpace.cs" />
+    <Compile Include="Memory\ICacheSpaceConsumer.cs" />
+    <Compile Include="Memory\ICacheSpacePolicy.cs" />
+    <Compile Include="JSON\Expressions\EmbeddedList.cs" />
+    <Compile Include="JSON\CustomConverter\SecurityInformationConverter.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Commands\InitDatabaseCommand.cs" />
+    <Compile Include="Exceptions\JournalException.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Commands\SessionId.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\InitDatabaseResponse.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\ResponseSessionId.cs" />
+    <Compile Include="Queries\ArrayUpdateOption.cs" />
+    <Compile Include="Queries\DQLParser.cs" />
+    <Compile Include="Queries\DQLParserRule.cs" />
+    <Compile Include="Queries\Filters\Aggregations\DocumentCollector.cs" />
+    <Compile Include="Queries\Filters\Aggregations\AVG.cs" />
+    <Compile Include="Queries\Filters\Aggregations\COUNT.cs" />
+    <Compile Include="Queries\Filters\Aggregations\MAX.cs" />
+    <Compile Include="Queries\Filters\Aggregations\MIN.cs" />
+    <Compile Include="Queries\Filters\Aggregations\SUM.cs" />
+    <Compile Include="Queries\Filters\AllPredicate.cs" />
+    <Compile Include="Queries\Filters\ANDPredicate.cs" />
+    <Compile Include="Queries\Filters\ArrayAllPredicate.cs" />
+    <Compile Include="Queries\Filters\ArrayAnyPredicate.cs" />
+    <Compile Include="Queries\Filters\ArrayEqualsPredicate.cs" />
+    <Compile Include="Queries\Filters\ArrayRangePredicate.cs" />
+    <Compile Include="Queries\Filters\ArraySequencePredicate.cs" />
+    <Compile Include="Queries\Filters\EmptyPredicate.cs" />
+    <Compile Include="Queries\Filters\EqualsPredicate.cs" />
+    <Compile Include="Queries\Filters\FilterPredicate.cs" />
+    <Compile Include="Queries\Filters\FullPredicate.cs" />
+    <Compile Include="Queries\Filters\GreaterPredicate.cs" />
+    <Compile Include="Queries\Filters\GroupByPredicate.cs" />
+    <Compile Include="Queries\Filters\ICondition.cs" />
+    <Compile Include="Queries\Filters\INPredicate.cs" />
+    <Compile Include="Queries\Filters\IPredicate.cs" />
+    <Compile Include="Queries\Filters\LesserPredicate.cs" />
+    <Compile Include="Queries\Filters\LimitPredicate.cs" />
+    <Compile Include="Queries\Filters\ORPredicate.cs" />
+    <Compile Include="Queries\Filters\Predicate.cs" />
+    <Compile Include="Queries\Filters\RangePredicate.cs" />
+    <Compile Include="Queries\Filters\Scalars\FORMAT.cs" />
+    <Compile Include="Queries\Filters\Scalars\IScalarFunction.cs" />
+    <Compile Include="Queries\Filters\Scalars\LCASE.cs" />
+    <Compile Include="Queries\Filters\Scalars\LEN.cs" />
+    <Compile Include="Queries\Filters\Scalars\MID.cs" />
+    <Compile Include="Queries\Filters\Scalars\NOW.cs" />
+    <Compile Include="Queries\Filters\Scalars\ROUND.cs" />
+    <Compile Include="Queries\Filters\Scalars\ScalarFunctionsStore.cs" />
+    <Compile Include="Queries\Filters\Scalars\UCASE.cs" />
+    <Compile Include="Queries\Filters\StorePredicate.cs" />
+    <Compile Include="Queries\Filters\TerminalPredicate.cs" />
+    <Compile Include="Queries\Filters\TrueCondition.cs" />
+    <Compile Include="Queries\Parser\Action.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\AttributeIndexNotDefined.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\EntryContent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\FAEdge.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\FAState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\GrammarReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\IGoldVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\LookAheadReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\LRAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\LRActionTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\ParseMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\Parser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\ParseResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\ParserException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\RecordId.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\Reduction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\Rule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\Symbol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\SymbolType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\Token.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\TokenStack.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\Parser\TypeIndexNotDefined.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queries\ParseTree\DML\Offset.cs" />
+    <Compile Include="Queries\ParseTree\DML\Projection.cs" />
+    <Compile Include="Queries\SymbolConstants.cs" />
+    <Compile Include="Queries\Optimizer\IFilterObject.cs" />
+    <Compile Include="Queries\Optimizer\IProxyPredicate.cs" />
+    <Compile Include="Queries\Optimizer\ProxyAndPredicate.cs" />
+    <Compile Include="Queries\Optimizer\ProxyOrPredicate.cs" />
+    <Compile Include="Queries\Optimizer\ProxyPredicate.cs" />
+    <Compile Include="Queries\ParseTree\DCL\DataControlObject.cs" />
+    <Compile Include="Queries\ParseTree\DCL\IDCObject.cs" />
+    <Compile Include="Queries\ParseTree\DDL\DataDefinitionObject.cs" />
+    <Compile Include="Queries\ParseTree\DDL\DDLConfiguration.cs" />
+    <Compile Include="Queries\ParseTree\DDL\IDDObject.cs" />
+    <Compile Include="Queries\ParseTree\DML\AndTreePredicate.cs" />
+    <Compile Include="Queries\ParseTree\DML\BinaryExpression.cs" />
+    <Compile Include="Queries\ParseTree\DML\ComparisonPredicate.cs" />
+    <Compile Include="Queries\ParseTree\DML\DeleteObject.cs" />
+    <Compile Include="Queries\ParseTree\DML\IDMObject.cs" />
+    <Compile Include="Queries\ParseTree\DML\IndexedSlicer.cs" />
+    <Compile Include="Queries\ParseTree\DML\InsertObject.cs" />
+    <Compile Include="Queries\ParseTree\DML\OrTreePredicate.cs" />
+    <Compile Include="Queries\ParseTree\DML\SelectObject.cs" />
+    <Compile Include="Queries\ParseTree\DML\UpdateObject.cs" />
+    <Compile Include="Queries\ParseTree\DML\ValuedSlicer.cs" />
+    <Compile Include="Queries\ParseTree\IDQLObject.cs" />
+    <Compile Include="Queries\ParseTree\DML\ITreePredicate.cs" />
+    <Compile Include="Queries\ParseTree\ParsedObjects.cs" />
+    <Compile Include="Queries\QueryCriteria.cs" />
+    <Compile Include="Queries\Results\HashEqualityComparer.cs" />
+    <Compile Include="Queries\Results\Intersecter.cs" />
+    <Compile Include="Queries\Results\KVPValueComparer.cs" />
+    <Compile Include="Queries\RuleConstants.cs" />
+    <Compile Include="Queries\Util\PredicateHelper.cs" />
+    <Compile Include="Queries\Util\QueryParsingHelper.cs" />
+    <Compile Include="Queries\Results\AllField.cs" />
+    <Compile Include="Queries\Results\CompoundField.cs" />
+    <Compile Include="Queries\Results\Field.cs" />
+    <Compile Include="Queries\Results\IQueryStore.cs" />
+    <Compile Include="Queries\Results\IResultSet.cs" />
+    <Compile Include="Queries\Results\ListedResultSet.cs" />
+    <Compile Include="Queries\Results\Transforms\IDataTransform.cs" />
+    <Compile Include="Queries\Results\Transforms\NoTransform.cs" />
+    <Compile Include="Queries\Results\Transforms\SelectTransform.cs" />
+    <Compile Include="Queries\Updation\Add.cs" />
+    <Compile Include="Queries\Updation\Delete.cs" />
+    <Compile Include="Queries\Updation\Insert.cs" />
+    <Compile Include="Queries\Updation\IUpdation.cs" />
+    <Compile Include="Queries\Updation\Remove.cs" />
+    <Compile Include="Queries\Updation\Rename.cs" />
+    <Compile Include="Queries\Updation\Replace.cs" />
+    <Compile Include="Queries\Updation\UpdateFunction.cs" />
+    <Compile Include="Queries\Updation\UpdateType.cs" />
+    <Compile Include="Queries\Updation\Updator.cs" />
+    <Compile Include="Queries\Util\ArrayValidator.cs" />
+    <Compile Include="Queries\Util\ConfigType.cs" />
+    <Compile Include="Queries\Util\ConfigurationValidator.cs" />
+    <Compile Include="Queries\Util\DocumentValidator.cs" />
+    <Compile Include="Queries\Util\DQLHelper.cs" />
+    <Compile Include="Queries\Util\ExpectedType.cs" />
+    <Compile Include="Queries\Util\IValidator.cs" />
+    <Compile Include="Queries\Util\Statics.cs" />
+    <Compile Include="Queries\Util\TrueValidator.cs" />
+    <Compile Include="Queries\Util\ValueValidator.cs" />
+    <Compile Include="Recovery\ClusteredRecoveryJobState.cs" />
+    <Compile Include="Recovery\ClusterJobInfoObject.cs" />
+    <Compile Include="Recovery\DataSliceType.cs" />
+    <Compile Include="Recovery\DifferentialOpType.cs" />
+    <Compile Include="Recovery\DiffTrackObject.cs" />
+    <Compile Include="Recovery\IJobProgressHandler.cs" />
+    <Compile Include="Recovery\IRecoveryCommunicationHandler.cs" />
+    <Compile Include="Recovery\IRecoveryCommunicationInitiater.cs" />
+    <Compile Include="Recovery\IClusteredRecoveryJob.cs" />
+    <Compile Include="Recovery\IRecoveryManager.cs" />
+    <Compile Include="Recovery\IRecoveryOperationListner.cs" />
+    <Compile Include="Recovery\Operation\EndOpParams.cs" />
+    <Compile Include="Recovery\Operation\SubmitBackupOpParams.cs" />
+    <Compile Include="Recovery\Operation\SubmitRestoreOpParams.cs" />
+    <Compile Include="Recovery\RecoveryFileState.cs" />
+    <Compile Include="Recovery\RecoveryFolderStructure.cs" />
+    <Compile Include="Recovery\RecoveryJobStateBase.cs" />
+    <Compile Include="Recovery\ShardDifState.cs" />
+    <Compile Include="Recovery\ShardRecoveryJobState.cs" />
+    <Compile Include="Recovery\RecoveryJobType.cs" />
+    <Compile Include="Enum\ResultType.cs" />
+    <Compile Include="Enum\ScalarFunctionType.cs" />
+    <Compile Include="Enum\SortOrder.cs" />
+    <Compile Include="Enum\Statistic.cs" />
+    <Compile Include="Enum\StatName.cs" />
+    <Compile Include="Enum\UpdateOption.cs" />
+    <Compile Include="Exceptions\ConfigurationException.cs" />
+    <Compile Include="Exceptions\DatabaseException.cs" />
+    <Compile Include="Exceptions\ManagementException.cs" />
+    <Compile Include="Exceptions\QuerySystemException.cs" />
+    <Compile Include="Exceptions\TimeoutException.cs" />
+    <Compile Include="IJSONType.cs" />
+    <Compile Include="Interop\Win32.cs" />
+    <Compile Include="IO\Crc32.cs" />
+    <Compile Include="IO\IPathGenerator.cs" />
+    <Compile Include="IO\TempFileManager.cs" />
+    <Compile Include="IO\UFileManager.cs" />
+    <Compile Include="ISize.cs" />
+    <Compile Include="JSONDocument.cs" />
+    <Compile Include="JsonSerializer.cs" />
+    <Compile Include="JSON\ArrayJsonValue.cs" />
+    <Compile Include="JSON\Attributor.cs" />
+    <Compile Include="JSON\BooleanJsonValue.cs" />
+    <Compile Include="JSON\CustomConverter\JsonCreationConverter.cs" />
+    <Compile Include="JSON\CustomConverter\LogOperationConverter.cs" />
+    <Compile Include="JSON\CustomConverter\ParameterConverter.cs" />
+    <Compile Include="JSON\CustomConverter\QueryConverter.cs" />
+    <Compile Include="JSON\DateTimeJsonValue.cs" />
+    <Compile Include="JSON\Expressions\AllEvaluable.cs" />
+    <Compile Include="JSON\Expressions\ArrayEvaluable.cs" />
+    <Compile Include="JSON\Expressions\Attribute.cs" />
+    <Compile Include="JSON\Expressions\BooleanConstantValue.cs" />
+    <Compile Include="JSON\Expressions\ConstantValue.cs" />
+    <Compile Include="JSON\Expressions\DateTimeConstantValue.cs" />
+    <Compile Include="JSON\Expressions\DocumentEvaluable.cs" />
+    <Compile Include="JSON\Expressions\DoubleConstantValue.cs" />
+    <Compile Include="JSON\Expressions\Evaluator.cs" />
+    <Compile Include="JSON\Expressions\Function.cs" />
+    <Compile Include="JSON\Expressions\IEvaluable.cs" />
+    <Compile Include="JSON\Expressions\IntegerConstantValue.cs" />
+    <Compile Include="JSON\Expressions\OrderedAttribute.cs" />
+    <Compile Include="JSON\Expressions\Parameter.cs" />
+    <Compile Include="JSON\Expressions\SortOrderConstant.cs" />
+    <Compile Include="JSON\Expressions\StringConstantValue.cs" />
+    <Compile Include="JSON\Expressions\ValueList.cs" />
+    <Compile Include="JSON\IJsonValue.cs" />
+    <Compile Include="JSON\Indexing\AllValue.cs" />
+    <Compile Include="JSON\Indexing\ArrayElement.cs" />
+    <Compile Include="JSON\Indexing\AttributeValue.cs" />
+    <Compile Include="JSON\Indexing\AttributeValueMask.cs" />
+    <Compile Include="JSON\Indexing\MultiAttributeValue.cs" />
+    <Compile Include="JSON\Indexing\NoValue.cs" />
+    <Compile Include="JSON\Indexing\SingleAttributeValue.cs" />
+    <Compile Include="JSON\NullValue.cs" />
+    <Compile Include="JSON\NumberJsonValue.cs" />
+    <Compile Include="JSON\ObjectJsonValue.cs" />
+    <Compile Include="JSON\StringJsonValue.cs" />
+    <Compile Include="Logger\ILogger.cs" />
+    <Compile Include="Logger\InMemoryLogger.cs" />
+    <Compile Include="Logger\LoggerManager.cs" />
+    <Compile Include="Logger\LoggerNames.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Net\Address.cs" />
+    <Compile Include="Net\DnsCache.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\CachingConfig.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\CollectionConfigs.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\CreateCollectionCommand.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\CreateIndexCommand.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\DatabaseConfig.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\ESENTConfig.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\IndexAttributeProto.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\IndicesConfig.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\LMDBConfig.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\StorageConfig.cs" />
+    <Compile Include="Protobuf\ConfigurationDomProtos\StorageProviderConfig.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\AuthenticationResponse.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Commands\AuthenticationCommand.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Commands\AuthenticationToken.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Commands\Command.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Commands\CreateSessionCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\DeleteDocumentsCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\DisposeReaderCommand.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Commands\DropCollectionCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\DropIndexCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\DropSessionCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\GetChunkCommand.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Commands\GetDocumentsCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\InsertDocumentsCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\QueryBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\ReadQueryCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\ReplaceDocumentsCommand.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Commands\UpdateCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\Commands\WriteQueryCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\CreateSessionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\DataChunk.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\DeleteDocumentsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\FailedDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\GetChunkResponse.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\GetDocumentsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\InsertDocumentsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\ReadQueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\ReplaceDocumentsResponse.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\Response.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\ResponseAuthenticationToken.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\SendNextChunkResponse.cs" />
+    <Compile Include="Protobuf\DatabaseOperations\UpdateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\DatabaseOperations\WriteQueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protobuf\ManagementCommands\Commands\ManagementCommandExt.cs" />
+    <Compile Include="Protobuf\ManagementCommands\ManagementResponseExt.cs" />
+    <Compile Include="Queries\AverageResult.cs" />
+    <Compile Include="Queries\IFunction.cs" />
+    <Compile Include="Queries\IAggregation.cs" />
+    <Compile Include="Queries\InverseComparer.cs" />
+    <Compile Include="Queries\IOptimizable.cs" />
+    <Compile Include="Recovery\RecoveryOpCodes.cs" />
+    <Compile Include="Recovery\Operation\RecoveryOperation.cs" />
+    <Compile Include="Recovery\RecoveryOperationStatus.cs" />
+    <Compile Include="Recovery\RecoveryStatus.cs" />
+    <Compile Include="Replication\OperationId.cs" />
+    <Compile Include="RPCFramework\DotNetRPC\TargetMethod.cs" />
+    <Compile Include="RPCFramework\DotNetRPC\TargetObject.cs" />
+    <Compile Include="RPCFramework\IRPCTargetObject.cs" />
+    <Compile Include="RPCFramework\ITargetMethod.cs" />
+    <Compile Include="RPCFramework\RPCMethodCache.cs" />
+    <Compile Include="RPCFramework\RPCService.cs" />
+    <Compile Include="RPCFramework\TargetMethodAttribute.cs" />
+    <Compile Include="RPCFramework\TargetMethodParameter.cs" />
+    <Compile Include="Security\Client\IClientAuthenticationCredential.cs" />
+    <Compile Include="Security\Client\SSPIClientAuthenticationCredential.cs" />
+    <Compile Include="Security\Impl\ClientSessionId.cs" />
+    <Compile Include="Security\Impl\Enums\ClusterRole.cs" />
+    <Compile Include="Security\Impl\Enums\ClusterRoleDescription.cs" />
+    <Compile Include="Security\Impl\Enums\CredentialType.cs" />
+    <Compile Include="Security\Impl\Enums\DatabaseRole.cs" />
+    <Compile Include="Security\Impl\Enums\DatabaseRoleDescription.cs" />
+    <Compile Include="Security\Impl\Enums\DCLEnums\DCLOperation.cs" />
+    <Compile Include="Security\Impl\Enums\DCLEnums\DCLResource.cs" />
+    <Compile Include="Security\Impl\Enums\DCLEnums\DCLRole.cs" />
+    <Compile Include="Security\Impl\Enums\OperationType.cs" />
+    <Compile Include="Security\Impl\Enums\PermissionEnum.cs" />
+    <Compile Include="Security\Impl\Enums\ResourceType.cs" />
+    <Compile Include="Security\Impl\Enums\RoleLevel.cs" />
+    <Compile Include="Security\Impl\Enums\RoleType.cs" />
+    <Compile Include="Security\Impl\Enums\SecurityInformationTypes.cs" />
+    <Compile Include="Security\Impl\Enums\ServerRole.cs" />
+    <Compile Include="Security\Impl\Enums\ServerRoleDescription.cs" />
+    <Compile Include="Security\Impl\Permission.cs" />
+    <Compile Include="Security\Impl\ResourceId.cs" />
+    <Compile Include="Security\Impl\ResourceItem.cs" />
+    <Compile Include="Security\Impl\Role.cs" />
+    <Compile Include="Security\Impl\RoleInstance.cs" />
+    <Compile Include="Security\Impl\RouterSessionId.cs" />
+    <Compile Include="Security\Impl\User.cs" />
+    <Compile Include="Security\Impl\UserLogin.cs" />
+    <Compile Include="Security\Impl\WindowUserCredential.cs" />
+    <Compile Include="Security\Interfaces\IClientSessionId.cs" />
+    <Compile Include="Security\Interfaces\IResourceItem.cs" />
+    <Compile Include="Security\Interfaces\IRole.cs" />
+    <Compile Include="Security\Interfaces\IRoleInstance.cs" />
+    <Compile Include="Security\Interfaces\ISessionId.cs" />
+    <Compile Include="Security\Interfaces\IUser.cs" />
+    <Compile Include="Security\Interfaces\IUserCredential.cs" />
+    <Compile Include="Security\Interfaces\IUserLogin.cs" />
+    <Compile Include="Security\SafeTokenHandle.cs" />
+    <Compile Include="Security\SecurityException.cs" />
+    <Compile Include="Security\Server\IServerAuthenticationCredential.cs" />
+    <Compile Include="Security\Server\SSPIServerAuthenticationCredential.cs" />
+    <Compile Include="Security\SSPIUtility.cs" />
+    <Compile Include="Security\SSPI\Buffers\SecureBufferInternal.cs" />
+    <Compile Include="Security\SSPI\ByteWriter.cs" />
+    <Compile Include="Security\SSPI\Contexts\ClientContext.cs" />
+    <Compile Include="Security\SSPI\Contexts\Context.cs" />
+    <Compile Include="Security\SSPI\Contexts\ContextAttrib.cs" />
+    <Compile Include="Security\SSPI\Contexts\ContextNativeMethods.cs" />
+    <Compile Include="Security\SSPI\Contexts\SecPkgContext_Sizes.cs" />
+    <Compile Include="Security\SSPI\Contexts\ContextQueryAttrib.cs" />
+    <Compile Include="Security\SSPI\Contexts\ImpersonationHandle.cs" />
+    <Compile Include="Security\SSPI\Contexts\SafeContextHandle.cs" />
+    <Compile Include="Security\SSPI\Contexts\SecPkgContext_String.cs" />
+    <Compile Include="Security\SSPI\Contexts\ServerContext.cs" />
+    <Compile Include="Security\SSPI\Credentials\ClientCredential.cs" />
+    <Compile Include="Security\SSPI\Credentials\Credential.cs" />
+    <Compile Include="Security\SSPI\Credentials\CredentialNativeMethods.cs" />
+    <Compile Include="Security\SSPI\Credentials\CredentialQueryAttrib.cs" />
+    <Compile Include="Security\SSPI\Credentials\CredentialUse.cs" />
+    <Compile Include="Security\SSPI\Credentials\CurrentCredential.cs" />
+    <Compile Include="Security\SSPI\Credentials\QueryNameAttribCarrier.cs" />
+    <Compile Include="Security\SSPI\Credentials\SafeCredentialHandle.cs" />
+    <Compile Include="Security\SSPI\Credentials\ServerCredential.cs" />
+    <Compile Include="Security\SSPI\EnumMgr.cs" />
+    <Compile Include="Security\SSPI\EnumStringAttribute.cs" />
+    <Compile Include="Security\SSPI\NativeMethods.cs" />
+    <Compile Include="Security\SSPI\PackageNames.cs" />
+    <Compile Include="Security\SSPI\PackageSupport.cs" />
+    <Compile Include="Security\SSPI\SafeSspiHandle.cs" />
+    <Compile Include="Security\SSPI\SecPkgCapability.cs" />
+    <Compile Include="Security\SSPI\SecPkgInfo.cs" />
+    <Compile Include="Security\SSPI\Buffers\SecureBuffer.cs" />
+    <Compile Include="Security\SSPI\Buffers\SecureBufferAdapter.cs" />
+    <Compile Include="Security\SSPI\Buffers\SecureBufferDataRep.cs" />
+    <Compile Include="Security\SSPI\Buffers\SecureBufferDescInternal.cs" />
+    <Compile Include="Security\SSPI\Buffers\BufferType.cs" />
+    <Compile Include="Security\SSPI\SecurityStatus.cs" />
+    <Compile Include="Security\SSPI\SecurityStatusExtensions.cs" />
+    <Compile Include="Security\SSPI\SSPIException.cs" />
+    <Compile Include="Security\SSPI\RawSspiHandle.cs" />
+    <Compile Include="Security\SSPI\TimeStamp.cs" />
+    <Compile Include="Security\AuthToken.cs" />
+    <Compile Include="Serialization\CompactReader.cs" />
+    <Compile Include="Serialization\CompactWriter.cs" />
+    <Compile Include="Serialization\ICompactSerializable.cs" />
+    <Compile Include="Serialization\ISizable.cs" />
+    <Compile Include="Serialization\ISizableIndex.cs" />
+    <Compile Include="Server\Engine\DocumentKey.cs" />
+    <Compile Include="Server\Engine\FailedDocument.cs" />
+    <Compile Include="Server\Engine\IAuthenticationOperation.cs" />
+    <Compile Include="Server\Engine\ICollectionConfiguration.cs" />
+    <Compile Include="Server\Engine\ICreateCollectionOperation.cs" />
+    <Compile Include="Server\Engine\ICreateIndexOperation.cs" />
+    <Compile Include="Server\Engine\ICreateSessionOperation.cs" />
+    <Compile Include="Server\Engine\ICreateSessionResponse.cs" />
+    <Compile Include="Server\Engine\ICredentials.cs" />
+    <Compile Include="Server\Engine\IDataChunk.cs" />
+    <Compile Include="Server\Engine\IDocumentsWriteOperation.cs" />
+    <Compile Include="Server\Engine\IDocumentsWriteResponse.cs" />
+    <Compile Include="Server\Engine\IDropSessionOperation.cs" />
+    <Compile Include="Server\Engine\IIndexAttribute.cs" />
+    <Compile Include="Server\Engine\Impl\AuthenticationOperation.cs" />
+    <Compile Include="Server\Engine\Impl\AuthenticationResponse.cs" />
+    <Compile Include="Server\Engine\Impl\CreateCollectionOperation.cs" />
+    <Compile Include="Server\Engine\Impl\CreateIndexOperation.cs" />
+    <Compile Include="Server\Engine\Impl\CreateSessionOperation.cs" />
+    <Compile Include="Server\Engine\Impl\CreateSessionResponse.cs" />
+    <Compile Include="Server\Engine\Impl\DatabaseOperationType.cs" />
+    <Compile Include="Server\Engine\Impl\DataChunk.cs" />
+    <Compile Include="Server\Engine\Impl\DataTypeMapper.cs" />
+    <Compile Include="Server\Engine\Impl\DisposeReaderOperation.cs" />
+    <Compile Include="Server\Engine\Impl\DropCollectionOperation.cs" />
+    <Compile Include="Server\Engine\Impl\DropIndexOperation.cs" />
+    <Compile Include="Server\Engine\Impl\GetChunkOperation.cs" />
+    <Compile Include="Server\Engine\Impl\GetChunkResponse.cs" />
+    <Compile Include="Server\Engine\Impl\InitDatabaseOperation.cs" />
+    <Compile Include="Server\Engine\Impl\InitDatabaseResponse.cs" />
+    <Compile Include="Server\Engine\Impl\InsertDocumentsResponse.cs" />
+    <Compile Include="Server\Engine\Impl\ParameterType.cs" />
+    <Compile Include="Server\Engine\Impl\RecreateIndexOperation.cs" />
+    <Compile Include="Server\Engine\Impl\RenameIndexOperation.cs" />
+    <Compile Include="Server\Engine\IRecreateIndexOperation.cs" />
+    <Compile Include="Server\Engine\IRenameIndexOperation.cs" />
+    <Compile Include="Server\Engine\Impl\OperationContext.cs" />
+    <Compile Include="Server\Engine\Impl\OperationMapper.cs" />
+    <Compile Include="Server\Engine\Impl\Parameter.cs" />
+    <Compile Include="Server\Engine\Impl\Query.cs" />
+    <Compile Include="Server\Engine\Impl\QueryParameterConverter.cs" />
+    <Compile Include="Server\Engine\Impl\ReplaceDocumentsOperation.cs" />
+    <Compile Include="Server\Engine\Impl\ReplaceDocumentsResponse.cs" />
+    <Compile Include="Server\Engine\Impl\WriteQueryOperation.cs" />
+    <Compile Include="Server\Engine\Impl\WriteQueryResponse.cs" />
+    <Compile Include="Server\Engine\Impl\ReadOperation.cs" />
+    <Compile Include="Server\Engine\INonQueryOperation.cs" />
+    <Compile Include="Server\Engine\IParsedQuery.cs" />
+    <Compile Include="Server\Engine\ExtendedJSONDataTypes.cs" />
+    <Compile Include="Server\Engine\IPrintable.cs" />
+    <Compile Include="Server\Engine\IGetChunkOperation.cs" />
+    <Compile Include="Server\Engine\IGetChunkResponse.cs" />
+    <Compile Include="Server\Engine\IDiposeReaderOperation.cs" />
+    <Compile Include="Server\IDatabaseStore.cs" />
+    <Compile Include="Server\IStore.cs" />
+    <Compile Include="Server\Engine\IDBOperation.cs" />
+    <Compile Include="Server\Engine\IDatabaseEngine.cs" />
+    <Compile Include="Server\Engine\IDropIndexOperation.cs" />
+    <Compile Include="Server\Engine\IDropCollectionOperation.cs" />
+    <Compile Include="Server\Engine\IGetOperation.cs" />
+    <Compile Include="Server\Engine\IGetResponse.cs" />
+    <Compile Include="Server\Engine\IIndexConfigration.cs" />
+    <Compile Include="Server\Engine\IJSONDocument.cs" />
+    <Compile Include="Server\Engine\Impl\DatabaseOperation.cs" />
+    <Compile Include="Server\Engine\Impl\DatabaseResponse.cs" />
+    <Compile Include="Server\Engine\Impl\DeleteDocumentsOperation.cs" />
+    <Compile Include="Server\Engine\Impl\DeleteDocumentsResponse.cs" />
+    <Compile Include="Server\Engine\Impl\GetDocumentsOperation.cs" />
+    <Compile Include="Server\Engine\Impl\GetDocumentsResponse.cs" />
+    <Compile Include="Server\Engine\Impl\ReadQueryOperation.cs" />
+    <Compile Include="Server\Engine\Impl\ReadQueryResponse.cs" />
+    <Compile Include="Server\Engine\Impl\InsertDocumentsOperation.cs" />
+    <Compile Include="Server\Engine\Impl\UpdateOperation.cs" />
+    <Compile Include="Server\Engine\Impl\UpdateResponse.cs" />
+    <Compile Include="Server\Engine\IOperationContext.cs" />
+    <Compile Include="Server\Engine\IQuery.cs" />
+    <Compile Include="Server\Engine\IReadOperation.cs" />
+    <Compile Include="Server\Engine\IUpdateOperation.cs" />
+    <Compile Include="Server\Engine\IWriteOperation.cs" />
+    <Compile Include="Server\Engine\IParameter.cs" />
+    <Compile Include="Server\Engine\IQueryResponse.cs" />
+    <Compile Include="Server\Engine\IDBResponse.cs" />
+    <Compile Include="Server\Engine\IQueryOperation.cs" />
+    <Compile Include="Server\Engine\IUpdateResponse.cs" />
+    <Compile Include="Queries\Results\SortedResultSet.cs" />
+    <Compile Include="Stats\Clock.cs" />
+    <Compile Include="Stats\BucketStatistics.cs" />
+    <Compile Include="Stats\CollectionStatistics.cs" />
+    <Compile Include="Stats\HPTimeStats.cs" />
+    <Compile Include="Stats\IStatsCollector.cs" />
+    <Compile Include="Stats\NodeStatus.cs" />
+    <Compile Include="Stats\ShardInfo.cs" />
+    <Compile Include="Stats\ShardStatistics.cs" />
+    <Compile Include="Stats\StatisticsType.cs" />
+    <Compile Include="Stats\StatsIdentity.cs" />
+    <Compile Include="Stats\StatsManager.cs" />
+    <Compile Include="Stats\UsageStats.cs" />
+    <Compile Include="Storage\Attachments\FileBlob.cs" />
+    <Compile Include="Storage\Attachments\IBlob.cs" />
+    <Compile Include="Storage\Attachments\AttachmentAttributes.cs" />
+    <Compile Include="Storage\Attachments\FileStore.cs" />
+    <Compile Include="Storage\Attachments\IBlobStorageProvider.cs" />
+    <Compile Include="Storage\Caching\LightCache\KeyIdentifier.cs" />
+    <Compile Include="Storage\Caching\LightCache\LightCache.cs" />
+    <Compile Include="Storage\Caching\QueryCache\QueryCache.cs" />
+    <Compile Include="Storage\Indexing\IIndex.cs" />
+    <Compile Include="Storage\Indexing\IIndexProvider.cs" />
+    <Compile Include="Storage\Indexing\IndexInsertOp.cs" />
+    <Compile Include="Storage\Indexing\IndexKey.cs" />
+    <Compile Include="Storage\Indexing\IndexOp.cs" />
+    <Compile Include="Storage\Indexing\IndexRemoveOp.cs" />
+    <Compile Include="Storage\Indexing\IQueryable.cs" />
+    <Compile Include="Storage\Indexing\OpType.cs" />
+    <Compile Include="Storage\Indexing\UniIndexKey.cs" />
+    <Compile Include="Storage\Provider\ProviderType.cs" />
+    <Compile Include="Storage\Transactions\ITransactable.cs" />
+    <Compile Include="Storage\Transactions\ITransaction.cs" />
+    <Compile Include="Threading\AsyncProcessor.cs" />
+    <Compile Include="Threading\ClrThreadPool.cs" />
+    <Compile Include="Threading\EventQueue.cs" />
+    <Compile Include="Threading\EventQueueComparer.cs" />
+    <Compile Include="Threading\IThreadPool.cs" />
+    <Compile Include="Threading\IThreadPoolTask.cs" />
+    <Compile Include="Threading\IThreadRunnable.cs" />
+    <Compile Include="Threading\Latch.cs" />
+    <Compile Include="Threading\NotifyingThreadQueue.cs" />
+    <Compile Include="Threading\Promise.cs" />
+    <Compile Include="Threading\QueueChangedState.cs" />
+    <Compile Include="Threading\QueuedEvent.cs" />
+    <Compile Include="Threading\AsyncTimeScheduler.cs" />
+    <Compile Include="Threading\QueuedTask.cs" />
+    <Compile Include="Threading\QueueOperationHandler.cs" />
+    <Compile Include="Threading\QueueState.cs" />
+    <Compile Include="Threading\QueueStateChangedHandler.cs" />
+    <Compile Include="Threading\Task.cs" />
+    <Compile Include="Threading\ThreadClass.cs" />
+    <Compile Include="Threading\ThreadErrorHandler.cs" />
+    <Compile Include="Threading\ThreadFinishedHandler.cs" />
+    <Compile Include="Threading\ThrottlingManager.cs" />
+    <Compile Include="Threading\TimeScheduler.cs" />
+    <Compile Include="Tools\ArgumentAttribute.cs" />
+    <Compile Include="Tools\CommandLineArgumentParser.cs" />
+    <Compile Include="Tools\CommandLineParamsBase.cs" />
+    <Compile Include="Toplogies\Impl\Cluster\ClusterMessage.cs" />
+    <Compile Include="Toplogies\Impl\Cluster\ClusterOperationType.cs" />
+    <Compile Include="Toplogies\Impl\Cluster\ClusterResponse.cs" />
+    <Compile Include="Toplogies\Impl\Cluster\ICluster.cs" />
+    <Compile Include="Toplogies\Impl\Cluster\IClusterListener.cs" />
+    <Compile Include="Toplogies\Impl\Cluster\IClusterResponse.cs" />
+    <Compile Include="Toplogies\Impl\Cluster\IResponseCollection.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\DistributionJsonConverter.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\DistributionMethod.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\DistributionStrategyJsonConverter.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\IDistribution.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\IDistributionConfiguration.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\IDistributionRouter.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\IDistributionStrategy.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\NonShardedDistributionStrategy\NonShardedDistribution.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\NonShardedDistributionStrategy\NonShardedDistributionRouter.cs" />
+    <Compile Include="Toplogies\Impl\Distribution\NonShardedDistributionStrategy\NonShardedDistributionStrategy.cs" />
+    <Compile Include="Toplogies\Impl\Interfaces\IExecutableRequest.cs" />
+    <Compile Include="Toplogies\Impl\Interfaces\ISessionDisconnectListener.cs" />
+    <Compile Include="Toplogies\Impl\Interfaces\ISessionListener.cs" />
+    <Compile Include="Toplogies\Impl\Interfaces\IShard.cs" />
+    <Compile Include="Toplogies\Impl\Interfaces\IShardListener.cs" />
+    <Compile Include="Toplogies\Impl\Interfaces\IShardServer.cs" />
+    <Compile Include="Toplogies\Impl\MembershipManagement\ElectionType.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\DatabaseMessage.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\Message.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\MessageResponse.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\MessageType.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\MulticastAsyncResult.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\OpCode.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\Server.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\ShardMulticastRequest.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\ShardOperationType.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\ShardRequestBase.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\ShardServerImpl\Session.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\ShardServerImpl\SessionInfo.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\ShardUnicastRequest.cs" />
+    <Compile Include="Toplogies\Impl\ShardImpl\Status.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\BucketLockResult.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\NodeIdentity.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\IStateTransferOperation.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\OperationParam.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\ParamName.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\StateTransferIdentity.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\Operations\StateTransferOpCode.cs" />
+    <Compile Include="Toplogies\Impl\StateTransfer\StateTransferType.cs" />
+    <Compile Include="Util\AppUtil.cs" />
+    <Compile Include="Util\AssemblyResolveEventHandler.cs" />
+    <Compile Include="Util\AttributeTypeSize.cs" />
+    <Compile Include="Util\BitSet.cs" />
+    <Compile Include="Util\BitsetConstants.cs" />
+    <Compile Include="Util\Check.cs" />
+    <Compile Include="Util\CollectionReader.cs" />
+    <Compile Include="Util\ConfigurationCommandUtil.cs" />
+    <Compile Include="Util\CSConnectionManager.cs" />
+    <Compile Include="Util\DeploymentUtil.cs" />
+    <Compile Include="Util\EmbeddedHelper.cs" />
+    <Compile Include="Util\EncryptionUtil.cs" />
+    <Compile Include="Util\EventCategories.cs" />
+    <Compile Include="Util\EventID.cs" />
+    <Compile Include="Util\ICollectionReader.cs" />
+    <Compile Include="JSON\JSONType.cs" />
+    <Compile Include="Util\IExternalWindow.cs" />
+    <Compile Include="Util\Impersonation.cs" />
+    <Compile Include="Util\JsonWrapper.cs" />
+    <Compile Include="Util\ListUtilMethods.cs" />
+    <Compile Include="Util\MemoryUtil.cs" />
+    <Compile Include="Util\MiscUtil.cs" />
+    <Compile Include="Util\NetworkUtil.cs" />
+    <Compile Include="Util\PollingOperation.cs" />
+    <Compile Include="Util\Protector.cs" />
+    <Compile Include="Util\RegHelper.cs" />
+    <Compile Include="Util\SerializationUtility.cs" />
+    <Compile Include="Util\ServiceConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\WildcardEnabledRegex.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nosdboss.snk" />
+    <None Include="Protobuf\ConfigurationDomProtos\CachingConfig.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\CreateCollectionCommand.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\CollectionConfigs.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\DatabaseConfig.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\ESENTConfig.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\IndexAttributeProto.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\CreateIndexCommand.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\IndicesConfig.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\LMDBConfig.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\StorageConfig.proto" />
+    <None Include="Protobuf\ConfigurationDomProtos\StorageProviderConfig.proto" />
+    <None Include="Protobuf\DatabaseOperations\AuthenticationResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\AuthenticationCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\AuthenticationToken.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\Command.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\CreateSessionCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\DeleteDocumentsCommand.proto">
+      <Generator>ProtoBufTool</Generator>
+    </None>
+    <None Include="Protobuf\DatabaseOperations\Commands\DisposeReaderCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\DropCollectionCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\DropIndexCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\DropSessionCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\GetChunkCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\GetDocumentsCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\InitDatabaseCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\InsertDocumentsCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\QueryBuilder.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\ReadQueryCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\ReplaceDocumentsCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\SessionId.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\UpdateCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\Commands\WriteQueryCommand.proto" />
+    <None Include="Protobuf\DatabaseOperations\CreateSessionResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\DataChunk.proto" />
+    <None Include="Protobuf\DatabaseOperations\DeleteDocumentsResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\FailedDocument.proto" />
+    <None Include="Protobuf\DatabaseOperations\GetChunkResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\GetDocumentsResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\InitDatabaseResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\InsertDocumentsResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\ReadQueryResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\ReplaceDocumentsResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\Response.proto" />
+    <None Include="Protobuf\DatabaseOperations\ResponseAuthenticationToken.proto" />
+    <None Include="Protobuf\DatabaseOperations\ResponseSessionId.proto" />
+    <None Include="Protobuf\DatabaseOperations\SendNextChunkResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\UpdateResponse.proto" />
+    <None Include="Protobuf\DatabaseOperations\WriteQueryResponse.proto" />
+    <Compile Include="Server\Engine\Impl\DropSessionCommand.cs" />
+    <None Include="Protobuf\StorageConfiguration.proto" />
+    <EmbeddedResource Include="Queries\NCacheDB_DQL1.0.cgt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Server\Formatters\" />
+    <Folder Include="Server\ProtocolServer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y "$(TargetPath)" "$(SolutionDir)build\Server\4x\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

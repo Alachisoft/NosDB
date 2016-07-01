@@ -1,0 +1,24 @@
+
+
+
+import "ManagementCommand.proto";
+import "ManagementResponse.proto";
+
+option java_outer_classname="CommandProtocol";
+package Alachisoft.NoSQL.Common.Protobuf.ManagementCommands;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message CommandBase 
+{
+    optional int64 requestId = 1;	
+	optional ManagementCommand command = 2;
+	optional ManagementResponse response = 3;
+		
+	optional CommandType commandType = 4;
+
+	enum CommandType 
+	{
+		COMMAND = 1;
+		RESPONSE = 2;
+	}	
+}

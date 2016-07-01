@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE74C979-A67E-4BB3-ABC4-054B2471D683}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alachisoft.NosDB.Serialization</RootNamespace>
+    <AssemblyName>Alachisoft.NosDB.Serialization</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>nosdboss.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CompactFormatterServices.cs" />
+    <Compile Include="Formatters\CompactBinaryFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Formatters\NativeBinaryFormatter.cs" />
+    <Compile Include="IO\CompactBinaryReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IO\CompactBinaryWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IO\SerializationContext.cs" />
+    <Compile Include="CompactSerializationException.cs" />
+    <Compile Include="Surrogates\ArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\AverageResultSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\BooleanArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\BooleanSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\DefaultConstructorDelegate.cs" />
+    <Compile Include="Surrogates\NullSerializationSurrogate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Surrogates\ByteArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\ByteSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\CharArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\CharSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\ContextSensitiveSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\CustomArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\DateTimeArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\DateTimeSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\DecimalArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\DecimalSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\DoubleArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\DoubleSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\DynamicRefTypeSurrogate.cs" />
+    <Compile Include="Surrogates\DynamicSurrogateBuilder.cs" />
+    <Compile Include="Surrogates\DynamicValueTypeSurrogate.cs" />
+    <Compile Include="Surrogates\EnumSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\EOFJavaSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\EOFNetSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\GenericIDictionarySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\GenericIListSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\GuidArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\GuidSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\ICompactSerializableSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\IDictionarySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\IListSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\Int16ArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\Int16SerializationSurrogate.cs" />
+    <Compile Include="Surrogates\Int32ArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\Int32SerializationSurrogate.cs" />
+    <Compile Include="Surrogates\Int64ArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\Int64SerializationSurrogate.cs" />
+    <Compile Include="Surrogates\ISerializationSurrogate.cs" />
+    <Compile Include="Surrogates\KeyValuePairSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\NullableArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\ObjectArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\ObjectSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\ReadObjectDelegate.cs" />
+    <Compile Include="Surrogates\SByteArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\SByteSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\SerializationSurrogate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Surrogates\SerializerConstructorDelegate.cs" />
+    <Compile Include="Surrogates\SessionStateCollectionSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\SessionStateStaticObjectCollectionSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\SingleArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\SingleSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\SkipSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\StringArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\StringSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\SurrogateHelper.cs" />
+    <Compile Include="Surrogates\UInt16ArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\UInt16SerializationSurrogate.cs" />
+    <Compile Include="Surrogates\UInt32ArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\UInt32SerializationSurrogate.cs" />
+    <Compile Include="Surrogates\UInt64ArraySerializationSurrogate.cs" />
+    <Compile Include="Surrogates\UInt64SerializationSurrogate.cs" />
+    <Compile Include="Surrogates\VersionCompatibleCompactSerializationSurrogate.cs" />
+    <Compile Include="Surrogates\WriteObjectDelegate.cs" />
+    <Compile Include="TypeSurrogateSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nosdboss.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{56286731-8887-4cf0-aa9b-6a882db8df77}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y "$(TargetPath)" "$(SolutionDir)build\Server\4x\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

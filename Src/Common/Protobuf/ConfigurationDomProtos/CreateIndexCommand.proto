@@ -1,0 +1,13 @@
+import "IndexAttributeProto.proto";
+
+option java_outer_classname="CreateIndexCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message CreateIndexCommand 
+{	
+	optional string indexName=1;
+	optional IndexAttributeProto attributes=2;
+	optional string cachePolicy=3;
+	optional bool journalEnabled=4;
+}

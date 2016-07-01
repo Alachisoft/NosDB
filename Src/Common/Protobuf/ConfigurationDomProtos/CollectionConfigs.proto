@@ -1,0 +1,10 @@
+import "CreateCollectionCommand.proto";
+
+option java_outer_classname="CollectionConfigsProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+message CollectionConfigs
+{	
+	repeated CreateCollectionCommand createCollectionCommand = 1;
+}

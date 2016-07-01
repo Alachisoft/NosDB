@@ -1,0 +1,30 @@
+option java_outer_classname="LMDBConfigProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message LMDBConfig
+{
+	optional EnvironmentOpenFlags environmentOpenFlags = 1;
+	optional int32 maxReaders=2;
+	optional int32 maxTables=3;
+	optional int64 initialDatabaseSize=4;
+	optional int64 expansionRatio=5;
+	optional int64 currentDatabaseSize=6;
+
+	enum EnvironmentOpenFlags 
+	{
+		None = 0;
+        FixedMap = 1;
+        NoSubDir = 16384;
+        NoSync = 65536;
+        ReadOnly = 131072;
+        NoMetaSync = 262144;
+        WriteMap = 524288;
+        MapAsync = 1048576;
+        NoThreadLocalStorage = 2097152;
+        NoLock = 4194304;
+        NoReadAhead = 8388608;
+        NoMemoryInitialization = 16777216;
+	}	
+}
+

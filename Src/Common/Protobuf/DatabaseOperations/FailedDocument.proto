@@ -1,0 +1,10 @@
+option java_outer_classname="FailedDocumentsProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message FailedDocument
+{
+	optional string documentId = 1;
+	optional int32 errorCode = 2;
+	repeated string errorParams =3;
+}

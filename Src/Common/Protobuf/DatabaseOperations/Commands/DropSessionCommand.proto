@@ -1,0 +1,8 @@
+option java_outer_classname="DropSessionCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message DropSessionCommand 
+{
+	optional string sessionId = 1;
+}

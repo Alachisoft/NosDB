@@ -1,0 +1,12 @@
+import "StorageConfig.proto";
+
+option java_outer_classname="DatabaseConfigProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message DatabaseConfig 
+{	
+	optional string name = 1;
+	optional StorageConfig storage = 2;
+}
+

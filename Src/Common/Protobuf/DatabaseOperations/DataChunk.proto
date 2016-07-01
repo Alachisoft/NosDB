@@ -1,0 +1,11 @@
+option java_outer_classname="DataChunkProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message DataChunk
+{
+	optional int32 chunkId = 1;
+	optional string readerUId = 2;
+    repeated string documents = 3;
+    optional bool isLastChunk = 4;
+}

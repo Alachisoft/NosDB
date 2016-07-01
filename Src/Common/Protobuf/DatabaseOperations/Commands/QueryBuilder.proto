@@ -1,0 +1,16 @@
+option java_outer_classname="QueryBuilderProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message QueryBuilder
+{	
+	optional string query = 1;
+	repeated Parameter parameters = 2;
+}
+
+message Parameter 
+{	
+	optional string attribute = 1;
+	optional string value = 2;
+	optional int32 jsonDataType = 3;
+}

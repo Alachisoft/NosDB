@@ -1,0 +1,14 @@
+import "IndicesConfig.proto";
+import "CachingConfig.proto";
+
+option java_outer_classname="CreateCollectionCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message CreateCollectionCommand 
+{	
+	optional string collectionName = 1;
+	optional IndicesConfig indicesConfig =2;
+	optional CachingConfig caching = 3;
+
+}

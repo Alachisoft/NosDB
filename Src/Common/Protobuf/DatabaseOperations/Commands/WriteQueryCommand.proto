@@ -1,0 +1,10 @@
+import "QueryBuilder.proto";
+
+option java_outer_classname="WriteQueryCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message WriteQueryCommand 
+{	
+	optional QueryBuilder query = 1;
+}

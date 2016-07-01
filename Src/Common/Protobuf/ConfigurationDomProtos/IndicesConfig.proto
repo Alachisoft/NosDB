@@ -1,0 +1,10 @@
+import "CreateIndexCommand.proto";
+
+option java_outer_classname="IndicesConfigProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message IndicesConfig
+{	
+	repeated CreateIndexCommand createIndexCommand = 1;
+}

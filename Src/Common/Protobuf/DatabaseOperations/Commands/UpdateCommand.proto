@@ -1,0 +1,11 @@
+import "QueryBuilder.proto";
+
+option java_outer_classname="UpdateCommandProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message UpdateCommand 
+{	
+	optional QueryBuilder query = 1;
+
+}

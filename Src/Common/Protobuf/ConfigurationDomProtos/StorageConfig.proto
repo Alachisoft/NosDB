@@ -1,0 +1,13 @@
+import "CollectionConfigs.proto";
+import "StorageProviderConfig.proto";
+
+
+option java_outer_classname="StorageConfigProtocol";
+package Alachisoft.NosDB.Common.Protobuf;
+option java_package = "com.alachisoft.nosdb.common.protobuf";
+
+message StorageConfig 
+{	
+	optional CollectionConfigs collections = 1;
+	optional StorageProviderConfig storageProvider = 2;
+}
