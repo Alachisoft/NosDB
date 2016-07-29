@@ -771,42 +771,10 @@ namespace Alachisoft.NosDB.Core.DBEngine.Management
 
         private void WriteXMLToFile(string xml)
         {
-            System.IO.StreamWriter sw = null;
-            System.IO.FileStream fs = null;
-            try
-            {
-                fs = new System.IO.FileStream(_fileName, System.IO.FileMode.Create);
-                sw = new System.IO.StreamWriter(fs);
-                sw.Write(xml);
-                sw.Flush();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            finally
-            {
-                if (sw != null)
-                {
-                    try
-                    {
-                        sw.Close();
-                    }
-                    catch (Exception)
-                    { }
-                    sw.Dispose();
-                    sw = null;
-                }
-                if (fs != null)
-                {
-                    try
-                    {
-                        fs.Close();
-                    }
-                    catch (Exception)
-                    { }
-                    fs.Dispose();
-                    fs = null;
+            using(var fs = new System.IO.FileStream(_fileName, System.IO.FileMode.Create)) {
+                using(var sw = new System.IO.StreamWriter(fs)) {
+                    sw.Write(xml);
+                    sw.Flush();
                 }
             }
         }
